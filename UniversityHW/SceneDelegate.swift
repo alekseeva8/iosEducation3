@@ -15,25 +15,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-        window = UIWindow(windowScene: windowScene)
-        window?.makeKeyAndVisible()
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-
-        //выбор initial vc (проверка signed or not)
-        let isSigned = UserDefaults.standard.value(forKey: "signed") as? String
-        var initialVC = UIViewController()
-        if isSigned == "true" {
-        // open secondVC
-        initialVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SecondVC") as! SecondViewController
-        //navigationController = UINavigationController(rootViewController: initialVC)
-        }
-        else {
-        // open firstVC
-        initialVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FirstVC") as! ViewController
-        //navigationController = UINavigationController(rootViewController: initialVC)
-        }
-        self.window?.rootViewController = initialVC
+//        guard let windowScene = (scene as? UIWindowScene) else { return }
+//        window = UIWindow(windowScene: windowScene)
+//        window?.makeKeyAndVisible()
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//
+//        //выбор initial vc (проверка signed or not)
+//        let isSigned = UserDefaults.standard.value(forKey: "signed") as? String
+//        var initialVC = UIViewController()
+//        if isSigned == "true" {
+//        // open secondVC
+//        initialVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SecondVC") as! SecondViewController
+//        //navigationController = UINavigationController(rootViewController: initialVC)
+//        }
+//        else {
+//        // open firstVC
+//        initialVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FirstVC") as! ViewController
+//        //navigationController = UINavigationController(rootViewController: initialVC)
+//        }
+//        self.window?.rootViewController = initialVC
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

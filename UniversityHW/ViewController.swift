@@ -18,47 +18,48 @@ class ViewController: UIViewController {
     }
 
     @IBAction func loginButtonPressed(_ sender: Any) {
-        //условия для выполнения записи данных пользователя и перехода к другому экрану (при нажатии на кнопку)
-
         let username = usernameTextField.text ?? ""
         let password = passwordTextField.text ?? ""
 
+        //выполнение записи данных пользователя
+        let userInfo: [String: String] = ["username" : username, "password": password]
+        userInfoInFileStorage(userInfo: userInfo)
+
+        //условия для выполнения записи данных пользователя и перехода к другому экрану (при нажатии на кнопку)
         let validator = Validator()
         if validator.isLoginCorrect(login: username) == true &&
             validator.isLoginContainsCorrectSymbols(login: username) == true &&
             validator.isPasswordCorrect(password: password) == true {
-            //выполнение записи данных пользователя
-            let userInfo: [String] = [username, password]
-            userInfoInFileStorage(userInfo: userInfo)
+            //запись данных в userDefaults
+            userDefaults()
             //performSegue(withIdentifier: "fromFirstVCToSecondVC", sender: nil)
-//            let secondVC = SecondViewController()
-//            navigationController?.pushViewController(secondVC, animated: true)
         } else {
             validator.alertSending(self)
         }
     }
 
     //MARK: - File Storage пример (с типом String)
-    func userInfoInFileStorage(userInfo: [String]) {
+    func userInfoInFileStorage(userInfo: [String: String]) {
         let urls = FileManager.default.urls(for: .documentDirectory, in: .allDomainsMask)
         guard let fileURL = urls.first?.appendingPathComponent("users.txt") else {return}
         do {
             let userInfoData = try JSONEncoder().encode(userInfo)
                 try userInfoData.write(to: fileURL)
             print("success")
-            userDefaults()
             print ("\(fileURL)")
         } catch {
             print(error)
         }
 
-//        do {
-//            let dataFromFile = try Data(contentsOf: fileURL)
-//            let decodedUserInfo = try JSONDecoder.decode(Array<String>.self, from: dataFromFile)
-//            print("Content is \(decodedUserInfo)")
-//        } catch {
-//
-//        }
+        do {
+            let dataFromFile = try Data(contentsOf: fileURL)
+            let decoder = JSONDecoder()
+            let decodedUserInfo = try decoder.decode([String: String].self, from: dataFromFile)
+            print(decodedUserInfo)
+            print(decodedUserInfo["username"])
+        } catch {
+
+        }
     }
 
     //MARK: - User Defaults
@@ -72,12 +73,3 @@ class ViewController: UIViewController {
     }
 
 }
-
-struct UserInfo: Codable {
-    var username: String
-    var password: String
-}
-
-//enum TrueOrFalse {
-//    case yes, no
-//}
