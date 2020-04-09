@@ -10,9 +10,11 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    @IBOutlet weak var label: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "SecondVC"
+        //label.text = UserDefaults.standard.value(forKey: "signed") as? String
 
         // Do any additional setup after loading the view.
     }

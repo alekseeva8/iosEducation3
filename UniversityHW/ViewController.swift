@@ -65,7 +65,7 @@ class ViewController: UIViewController {
     func userDefaults() {
         let userDefaults = UserDefaults.standard
         //класть словари,массивы
-        userDefaults.set(true, forKey: "signed")
+        userDefaults.set("true", forKey: "signed")
         if let value = userDefaults.value(forKey: "signed") {
             print(value)
         }
