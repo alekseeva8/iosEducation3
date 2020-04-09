@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,44 +23,36 @@ class ViewController: UIViewController {
         let password = passwordTextField.text ?? ""
 
         //выполнение записи данных пользователя
-        let userInfo: [String: String] = ["username" : username, "password": password]
-        userInfoInFileStorage(userInfo: userInfo)
+        let decodedUserInfo = fetchInfoFromFileStorage()
+        print(decodedUserInfo["username"] ?? "")
+        let decodedUsername = decodedUserInfo["username"] ?? ""
+        let decodedPassword = decodedUserInfo["password"] ?? ""
 
-        //условия для выполнения записи данных пользователя и перехода к другому экрану (при нажатии на кнопку)
-        let validator = Validator()
-        if validator.isLoginCorrect(login: username) == true &&
-            validator.isLoginContainsCorrectSymbols(login: username) == true &&
-            validator.isPasswordCorrect(password: password) == true {
+        if username == decodedUsername && password == decodedPassword {
             //запись данных в userDefaults
             userDefaults()
+            print("userDefaults saved")
             //performSegue(withIdentifier: "fromFirstVCToSecondVC", sender: nil)
-        } else {
-            validator.alertSending(self)
+        }
+        else {
+            //Validator().alertSending(self)
         }
     }
 
-    //MARK: - File Storage пример (с типом String)
-    func userInfoInFileStorage(userInfo: [String: String]) {
+    //MARK: - File Storage (достаем данные)
+    func fetchInfoFromFileStorage() -> [String: String] {
+        var decodedUserInfo: [String : String] = [:]
         let urls = FileManager.default.urls(for: .documentDirectory, in: .allDomainsMask)
-        guard let fileURL = urls.first?.appendingPathComponent("users.txt") else {return}
-        do {
-            let userInfoData = try JSONEncoder().encode(userInfo)
-                try userInfoData.write(to: fileURL)
-            print("success")
-            print ("\(fileURL)")
-        } catch {
-            print(error)
-        }
-
+        if let fileURL = urls.first?.appendingPathComponent("users.txt") {
         do {
             let dataFromFile = try Data(contentsOf: fileURL)
             let decoder = JSONDecoder()
-            let decodedUserInfo = try decoder.decode([String: String].self, from: dataFromFile)
+            decodedUserInfo = try decoder.decode([String: String].self, from: dataFromFile)
             print(decodedUserInfo)
-            print(decodedUserInfo["username"])
         } catch {
-
         }
+        }
+        return decodedUserInfo
     }
 
     //MARK: - User Defaults
