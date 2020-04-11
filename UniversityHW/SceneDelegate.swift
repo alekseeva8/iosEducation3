@@ -17,7 +17,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        window?.makeKeyAndVisible()
+
+        let rootNavigationController = UINavigationController()
+
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
         //выбор initial vc (проверка signed or not)
@@ -26,14 +28,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if isSigned == "true" {
         // open secondVC
         initialVC = storyboard.instantiateViewController(withIdentifier: "WelcomeVC") as! WelcomeViewController
-        //navigationController = UINavigationController(rootViewController: initialVC)
         }
         else {
         // open firstVC
-        initialVC = storyboard.instantiateViewController(withIdentifier: "RegistrVC") as! LoginViewController
-        //navigationController = UINavigationController(rootViewController: initialVC)
+        initialVC = storyboard.instantiateViewController(withIdentifier: "RegistrVC") as! RegistrationViewController
         }
-        self.window?.rootViewController = initialVC
+
+        self.window?.rootViewController = rootNavigationController
+        rootNavigationController.pushViewController(initialVC, animated: false)
+        window?.makeKeyAndVisible()
+        //let rootNavigationController = UINavigationController(rootViewController: initialVC)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

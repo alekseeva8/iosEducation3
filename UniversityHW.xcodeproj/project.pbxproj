@@ -62,13 +62,13 @@
 		F3726E02243DD7B000C37F00 /* UniversityHW */ = {
 			isa = PBXGroup;
 			children = (
+				F3726E09243DD7B000C37F00 /* Main.storyboard */,
 				F3726E03243DD7B000C37F00 /* AppDelegate.swift */,
 				F3726E05243DD7B000C37F00 /* SceneDelegate.swift */,
-				F3726E07243DD7B000C37F00 /* LoginViewController.swift */,
-				F3726E17243EE8C100C37F00 /* Validator.swift */,
-				F3726E09243DD7B000C37F00 /* Main.storyboard */,
 				F3344FB8243F795600E411B4 /* RegistrationViewController.swift */,
+				F3726E07243DD7B000C37F00 /* LoginViewController.swift */,
 				F3726E19243EEC3E00C37F00 /* WelcomeViewController.swift */,
+				F3726E17243EE8C100C37F00 /* Validator.swift */,
 				F3726E0C243DD7B100C37F00 /* Assets.xcassets */,
 				F3726E0E243DD7B100C37F00 /* LaunchScreen.storyboard */,
 				F3726E11243DD7B100C37F00 /* Info.plist */,

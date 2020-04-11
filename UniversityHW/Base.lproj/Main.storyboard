@@ -118,8 +118,8 @@
         <!--Registration View Controller-->
         <scene sceneID="LeS-MJ-eTg">
             <objects>
-                <viewController id="cNO-nG-WhC" customClass="RegistrationViewController" customModule="UniversityHW" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" restorationIdentifier="RegistrVC" id="eAF-uS-e72">
+                <viewController storyboardIdentifier="RegistrVC" id="cNO-nG-WhC" customClass="RegistrationViewController" customModule="UniversityHW" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eAF-uS-e72">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

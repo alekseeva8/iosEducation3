@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "FirstVC"
+        title = "LoginVC"
     }
 
     @IBAction func loginButtonPressed(_ sender: Any) {
