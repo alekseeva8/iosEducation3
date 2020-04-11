@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
@@ -32,10 +32,9 @@ class ViewController: UIViewController {
             //запись данных в userDefaults
             userDefaults()
             print("userDefaults saved")
-            //performSegue(withIdentifier: "fromFirstVCToSecondVC", sender: nil)
+            performSegue(withIdentifier: "fromLoginVCToWelcomeVC", sender: nil)
         }
         else {
-            //Validator().alertSending(self)
         }
     }
 

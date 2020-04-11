@@ -10,12 +10,12 @@
 		F3344FB9243F795600E411B4 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3344FB8243F795600E411B4 /* RegistrationViewController.swift */; };
 		F3726E04243DD7B000C37F00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3726E03243DD7B000C37F00 /* AppDelegate.swift */; };
 		F3726E06243DD7B000C37F00 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3726E05243DD7B000C37F00 /* SceneDelegate.swift */; };
-		F3726E08243DD7B000C37F00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3726E07243DD7B000C37F00 /* ViewController.swift */; };
+		F3726E08243DD7B000C37F00 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3726E07243DD7B000C37F00 /* LoginViewController.swift */; };
 		F3726E0B243DD7B000C37F00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3726E09243DD7B000C37F00 /* Main.storyboard */; };
 		F3726E0D243DD7B100C37F00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3726E0C243DD7B100C37F00 /* Assets.xcassets */; };
 		F3726E10243DD7B100C37F00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3726E0E243DD7B100C37F00 /* LaunchScreen.storyboard */; };
 		F3726E18243EE8C100C37F00 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3726E17243EE8C100C37F00 /* Validator.swift */; };
-		F3726E1A243EEC3E00C37F00 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3726E19243EEC3E00C37F00 /* SecondViewController.swift */; };
+		F3726E1A243EEC3E00C37F00 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3726E19243EEC3E00C37F00 /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,13 +23,13 @@
 		F3726E00243DD7B000C37F00 /* UniversityHW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniversityHW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3726E03243DD7B000C37F00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3726E05243DD7B000C37F00 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F3726E07243DD7B000C37F00 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F3726E07243DD7B000C37F00 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F3726E0A243DD7B000C37F00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3726E0C243DD7B100C37F00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3726E0F243DD7B100C37F00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3726E11243DD7B100C37F00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3726E17243EE8C100C37F00 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
-		F3726E19243EEC3E00C37F00 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		F3726E19243EEC3E00C37F00 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,11 +64,11 @@
 			children = (
 				F3726E03243DD7B000C37F00 /* AppDelegate.swift */,
 				F3726E05243DD7B000C37F00 /* SceneDelegate.swift */,
-				F3726E07243DD7B000C37F00 /* ViewController.swift */,
+				F3726E07243DD7B000C37F00 /* LoginViewController.swift */,
 				F3726E17243EE8C100C37F00 /* Validator.swift */,
 				F3726E09243DD7B000C37F00 /* Main.storyboard */,
 				F3344FB8243F795600E411B4 /* RegistrationViewController.swift */,
-				F3726E19243EEC3E00C37F00 /* SecondViewController.swift */,
+				F3726E19243EEC3E00C37F00 /* WelcomeViewController.swift */,
 				F3726E0C243DD7B100C37F00 /* Assets.xcassets */,
 				F3726E0E243DD7B100C37F00 /* LaunchScreen.storyboard */,
 				F3726E11243DD7B100C37F00 /* Info.plist */,
@@ -149,9 +149,9 @@
 			files = (
 				F3344FB9243F795600E411B4 /* RegistrationViewController.swift in Sources */,
 				F3726E18243EE8C100C37F00 /* Validator.swift in Sources */,
-				F3726E08243DD7B000C37F00 /* ViewController.swift in Sources */,
+				F3726E08243DD7B000C37F00 /* LoginViewController.swift in Sources */,
 				F3726E04243DD7B000C37F00 /* AppDelegate.swift in Sources */,
-				F3726E1A243EEC3E00C37F00 /* SecondViewController.swift in Sources */,
+				F3726E1A243EEC3E00C37F00 /* WelcomeViewController.swift in Sources */,
 				F3726E06243DD7B000C37F00 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

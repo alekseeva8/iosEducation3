@@ -8,12 +8,12 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var label: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "SecondVC"
+        title = "WelcomeVC"
     }
 
 }

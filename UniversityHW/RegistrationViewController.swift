@@ -29,7 +29,7 @@ class RegistrationViewController: UIViewController {
                     validator.isLoginContainsCorrectSymbols(login: username) == true &&
                     validator.isPasswordCorrect(password: password) == true {
                     userInfoInFileStorage(userInfo: userInfo)
-                    //performSegue(withIdentifier: "RegistrVCToFirstVC", sender: nil)
+                    performSegue(withIdentifier: "RegistrVCToLoginVC", sender: nil)
                 } else {
                     validator.alertSending(self)
                 }

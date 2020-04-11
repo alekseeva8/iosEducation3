@@ -25,12 +25,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         var initialVC = UIViewController()
         if isSigned == "true" {
         // open secondVC
-        initialVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SecondVC") as! SecondViewController
+        initialVC = storyboard.instantiateViewController(withIdentifier: "WelcomeVC") as! WelcomeViewController
         //navigationController = UINavigationController(rootViewController: initialVC)
         }
         else {
         // open firstVC
-        initialVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FirstVC") as! ViewController
+        initialVC = storyboard.instantiateViewController(withIdentifier: "RegistrVC") as! LoginViewController
         //navigationController = UINavigationController(rootViewController: initialVC)
         }
         self.window?.rootViewController = initialVC

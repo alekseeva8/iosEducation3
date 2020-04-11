@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="FirstVC" id="BYZ-38-t0r" customClass="ViewController" customModule="UniversityHW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="UniversityHW" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="63" width="335" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="djp-B0-gHP"/>
-                                            <constraint firstAttribute="width" constant="335" id="iP8-MT-hHv"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="335" id="iP8-MT-hHv"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -49,10 +49,9 @@
                                 <state key="normal" title="LOG IN"/>
                                 <connections>
                                     <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Flj-MY-m8E"/>
-                                    <segue destination="T7n-ha-5Ft" kind="presentation" identifier="fromFirstVCToSecondVC" modalPresentationStyle="fullScreen" id="XdK-Z9-8KC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in to your Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWk-br-aLH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in to your Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWk-br-aLH" userLabel="Label">
                                 <rect key="frame" x="86.666666666666671" y="143.66666666666663" width="240.66666666666663" height="139.33333333333337"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -78,16 +77,17 @@
                         <outlet property="loginButton" destination="fSv-uS-243" id="36H-t0-pWb"/>
                         <outlet property="passwordTextField" destination="U9W-T6-NoE" id="vxk-kb-saw"/>
                         <outlet property="usernameTextField" destination="oYT-9j-6m1" id="1vh-Pi-Us9"/>
+                        <segue destination="T7n-ha-5Ft" kind="presentation" identifier="fromLoginVCToWelcomeVC" modalPresentationStyle="fullScreen" id="bRZ-3R-uRO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1077.5999999999999" y="115.59220389805098"/>
         </scene>
-        <!--Second View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="616-9i-FIE">
             <objects>
-                <viewController storyboardIdentifier="SecondVC" id="T7n-ha-5Ft" customClass="SecondViewController" customModule="UniversityHW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeVC" id="T7n-ha-5Ft" customClass="WelcomeViewController" customModule="UniversityHW" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BJG-hA-eQx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,7 +119,7 @@
         <scene sceneID="LeS-MJ-eTg">
             <objects>
                 <viewController id="cNO-nG-WhC" customClass="RegistrationViewController" customModule="UniversityHW" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eAF-uS-e72">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="RegistrVC" id="eAF-uS-e72">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -138,7 +138,7 @@
                                         <rect key="frame" x="0.0" y="63" width="335" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="1iJ-38-MJz"/>
-                                            <constraint firstAttribute="width" constant="335" id="6mu-a0-ntJ"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="335" id="6mu-a0-ntJ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -157,7 +157,6 @@
                                 <state key="normal" title="Register"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="cNO-nG-WhC" eventType="touchUpInside" id="uEk-Kk-DaV"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="RegistrVCToFirstVC" modalPresentationStyle="fullScreen" id="VDr-Hd-7bO"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNV-lr-EZi">
@@ -185,6 +184,7 @@
                     <connections>
                         <outlet property="passwordTextField" destination="nrj-Pd-BTK" id="yCI-r2-VdI"/>
                         <outlet property="usernameTextField" destination="fLb-xn-Qe8" id="Vvt-Fw-PLC"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="RegistrVCToLoginVC" modalPresentationStyle="fullScreen" id="aEo-iU-qyh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NQ0-Go-7mM" sceneMemberID="firstResponder"/>
