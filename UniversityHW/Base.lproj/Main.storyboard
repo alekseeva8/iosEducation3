@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cNO-nG-WhC">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,11 +12,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="UniversityHW" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="center" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="Nw4-p6-OJW">
-                                <rect key="frame" x="39.666666666666657" y="311" width="335" height="97"/>
+                                <rect key="frame" x="20" y="196.5" width="335" height="97"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oYT-9j-6m1">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="34"/>
@@ -38,7 +38,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSv-uS-243">
-                                <rect key="frame" x="107" y="428" width="200" height="40"/>
+                                <rect key="frame" x="87.5" y="313.5" width="200" height="40"/>
                                 <color key="backgroundColor" red="0.96130555870000001" green="0.90916923549999995" blue="0.41556767369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="PQu-jg-f2m"/>
@@ -52,7 +52,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in to your Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWk-br-aLH" userLabel="Label">
-                                <rect key="frame" x="86.666666666666671" y="143.66666666666663" width="240.66666666666663" height="139.33333333333337"/>
+                                <rect key="frame" x="67.5" y="99.5" width="240.5" height="69"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -89,11 +89,28 @@
             <objects>
                 <viewController storyboardIdentifier="WelcomeVC" id="T7n-ha-5Ft" customClass="WelcomeViewController" customModule="UniversityHW" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BJG-hA-eQx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YC1-xb-H6l">
-                                <rect key="frame" x="146" y="433" width="122" height="30"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="webinar" translatesAutoresizingMaskIntoConstraints="NO" id="ers-Jt-0y9" userLabel="webinarImage">
+                                <rect key="frame" x="64" y="30" width="247" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="VZJ-qM-Tnv"/>
+                                    <constraint firstAttribute="width" constant="247" id="z6x-GP-b0c"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGm-NM-x2o" userLabel="studentsListButton">
+                                <rect key="frame" x="116.5" y="310" width="142" height="42"/>
+                                <color key="backgroundColor" red="0.96130555870000001" green="0.90916923549999995" blue="0.41556767369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="Students List"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="T7n-ha-5Ft" eventType="touchUpInside" id="gTq-RJ-opB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YC1-xb-H6l" userLabel="welcomeLabel">
+                                <rect key="frame" x="126.5" y="250" width="122" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -102,29 +119,49 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="YC1-xb-H6l" firstAttribute="centerX" secondItem="BJG-hA-eQx" secondAttribute="centerX" id="3pI-4A-RYK"/>
-                            <constraint firstItem="YC1-xb-H6l" firstAttribute="centerY" secondItem="BJG-hA-eQx" secondAttribute="centerY" id="oHG-dO-LBP"/>
+                            <constraint firstItem="ers-Jt-0y9" firstAttribute="top" secondItem="zbr-eJ-7Ia" secondAttribute="top" constant="30" id="Pax-3V-R1I"/>
+                            <constraint firstItem="ers-Jt-0y9" firstAttribute="centerX" secondItem="BJG-hA-eQx" secondAttribute="centerX" id="RgN-Ui-m8b"/>
+                            <constraint firstItem="MGm-NM-x2o" firstAttribute="top" secondItem="YC1-xb-H6l" secondAttribute="bottom" constant="30" id="Yg4-2C-V0W"/>
+                            <constraint firstItem="YC1-xb-H6l" firstAttribute="top" secondItem="ers-Jt-0y9" secondAttribute="bottom" constant="20" id="kSh-Q0-PXT"/>
+                            <constraint firstItem="MGm-NM-x2o" firstAttribute="centerX" secondItem="BJG-hA-eQx" secondAttribute="centerX" id="lig-o4-8Aq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zbr-eJ-7Ia"/>
                     </view>
                     <navigationItem key="navigationItem" id="E0F-Ia-shM"/>
                     <connections>
                         <outlet property="label" destination="YC1-xb-H6l" id="hIV-Ar-x9d"/>
+                        <segue destination="cJu-wV-2YT" kind="presentation" identifier="fromWelcomeVCToCollectionVC" modalPresentationStyle="fullScreen" id="BNM-hF-RuH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YT5-HI-Dfv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2136" y="115"/>
         </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="Q8V-b3-EHe">
+            <objects>
+                <viewController id="cJu-wV-2YT" customClass="CollectionViewController" customModule="UniversityHW" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rVx-fR-KUi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="fzq-QP-QaT"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jIa-mW-JAw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2867" y="112"/>
+        </scene>
         <!--Registration View Controller-->
         <scene sceneID="LeS-MJ-eTg">
             <objects>
                 <viewController storyboardIdentifier="RegistrVC" id="cNO-nG-WhC" customClass="RegistrationViewController" customModule="UniversityHW" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eAF-uS-e72">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="center" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="7gv-wF-dHg">
-                                <rect key="frame" x="39.666666666666657" y="311" width="335" height="97"/>
+                                <rect key="frame" x="20" y="196.5" width="335" height="97"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fLb-xn-Qe8">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="34"/>
@@ -146,7 +183,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OuE-UJ-imN">
-                                <rect key="frame" x="107" y="428" width="200" height="40"/>
+                                <rect key="frame" x="87.5" y="313.5" width="200" height="40"/>
                                 <color key="backgroundColor" red="0.96130555870000001" green="0.90916923549999995" blue="0.41556767369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="JdN-zO-bYv"/>
@@ -160,7 +197,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNV-lr-EZi">
-                                <rect key="frame" x="142.33333333333331" y="143.66666666666663" width="129.33333333333331" height="139.33333333333337"/>
+                                <rect key="frame" x="123" y="99.5" width="129.5" height="69"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -192,4 +229,7 @@
             <point key="canvasLocation" x="301" y="115"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="webinar" width="256" height="256"/>
+    </resources>
 </document>

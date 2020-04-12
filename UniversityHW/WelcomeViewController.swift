@@ -16,4 +16,7 @@ class WelcomeViewController: UIViewController {
         title = "WelcomeVC"
     }
 
+    @IBAction func buttonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "fromWelcomeVCToCollectionVC", sender: nil)
+    }
 }
