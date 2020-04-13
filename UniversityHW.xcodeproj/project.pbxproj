@@ -16,6 +16,8 @@
 		F3344FCB24431DA300E411B4 /* ParseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3344FCA24431DA300E411B4 /* ParseHandler.swift */; };
 		F3344FCD24431FE800E411B4 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3344FCC24431FE800E411B4 /* Student.swift */; };
 		F3344FCF244340B100E411B4 /* StudentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3344FCE244340B100E411B4 /* StudentAPI.swift */; };
+		F3344FD124449FF300E411B4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3344FD024449FF300E411B4 /* ProfileViewController.swift */; };
+		F3344FD32444A6BE00E411B4 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3344FD22444A6BE00E411B4 /* ProfileManager.swift */; };
 		F3726E04243DD7B000C37F00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3726E03243DD7B000C37F00 /* AppDelegate.swift */; };
 		F3726E06243DD7B000C37F00 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3726E05243DD7B000C37F00 /* SceneDelegate.swift */; };
 		F3726E08243DD7B000C37F00 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3726E07243DD7B000C37F00 /* LoginViewController.swift */; };
@@ -36,6 +38,8 @@
 		F3344FCA24431DA300E411B4 /* ParseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseHandler.swift; sourceTree = "<group>"; };
 		F3344FCC24431FE800E411B4 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		F3344FCE244340B100E411B4 /* StudentAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAPI.swift; sourceTree = "<group>"; };
+		F3344FD024449FF300E411B4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F3344FD22444A6BE00E411B4 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 		F3726E00243DD7B000C37F00 /* UniversityHW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniversityHW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3726E03243DD7B000C37F00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3726E05243DD7B000C37F00 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +90,7 @@
 				F3726E19243EEC3E00C37F00 /* WelcomeViewController.swift */,
 				F3344FC02442F7AD00E411B4 /* CollectionViewController.swift */,
 				F3344FC22443078E00E411B4 /* CollectionViewCell.swift */,
+				F3344FD024449FF300E411B4 /* ProfileViewController.swift */,
 				F3344FC624431BB000E411B4 /* DataHandler.swift */,
 				F3344FC824431C9400E411B4 /* APIHandler.swift */,
 				F3344FCA24431DA300E411B4 /* ParseHandler.swift */,
@@ -93,6 +98,7 @@
 				F3344FCC24431FE800E411B4 /* Student.swift */,
 				F3344FCE244340B100E411B4 /* StudentAPI.swift */,
 				F3726E17243EE8C100C37F00 /* Validator.swift */,
+				F3344FD22444A6BE00E411B4 /* ProfileManager.swift */,
 				F3726E0C243DD7B100C37F00 /* Assets.xcassets */,
 				F3726E0E243DD7B100C37F00 /* LaunchScreen.storyboard */,
 				F3726E11243DD7B100C37F00 /* Info.plist */,
@@ -182,7 +188,9 @@
 				F3344FCD24431FE800E411B4 /* Student.swift in Sources */,
 				F3344FC52443188A00E411B4 /* StorageHandler.swift in Sources */,
 				F3726E04243DD7B000C37F00 /* AppDelegate.swift in Sources */,
+				F3344FD32444A6BE00E411B4 /* ProfileManager.swift in Sources */,
 				F3344FC12442F7AD00E411B4 /* CollectionViewController.swift in Sources */,
+				F3344FD124449FF300E411B4 /* ProfileViewController.swift in Sources */,
 				F3726E1A243EEC3E00C37F00 /* WelcomeViewController.swift in Sources */,
 				F3726E06243DD7B000C37F00 /* SceneDelegate.swift in Sources */,
 			);

@@ -103,13 +103,9 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDe
 extension CollectionViewController {
     //метод говорит делегату, какой выбран пользователем ряд (нажатием на ряд пользователем). здесь можно модифицировать ряд
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //достаем имя студента из ячейки (для дальнейшей передачи в ProfileVC)
-//        ProfileManager.shared.name = NetworkManager.shared.swPeopleArray[indexPath.row].name
+        ProfileManager.shared.name = arrayOfStudents[indexPath.row].name
 
-        //загружаются разные стили профилей в зависимости от пола студента
-//        if NetworkManager.shared.swPeopleArray[indexPath.row].gender == "n/a" || NetworkManager.shared.swPeopleArray[indexPath.row].gender == "none" {
-//            performSegue(withIdentifier: "profileVC", sender: nil)
-//        }
+        performSegue(withIdentifier: "profileVC", sender: nil)
     }
 }
 

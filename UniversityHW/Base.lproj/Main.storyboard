@@ -130,7 +130,7 @@
                     <navigationItem key="navigationItem" id="E0F-Ia-shM"/>
                     <connections>
                         <outlet property="label" destination="YC1-xb-H6l" id="hIV-Ar-x9d"/>
-                        <segue destination="cJu-wV-2YT" kind="presentation" identifier="fromWelcomeVCToCollectionVC" modalPresentationStyle="fullScreen" id="BNM-hF-RuH"/>
+                        <segue destination="cJu-wV-2YT" kind="presentation" identifier="fromWelcomeVCToCollectionVC" id="BNM-hF-RuH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YT5-HI-Dfv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -142,15 +142,58 @@
             <objects>
                 <viewController id="cJu-wV-2YT" customClass="CollectionViewController" customModule="UniversityHW" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rVx-fR-KUi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="fzq-QP-QaT"/>
                     </view>
+                    <connections>
+                        <segue destination="XKQ-Uq-FJO" kind="presentation" identifier="profileVC" id="bQg-AA-vP9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jIa-mW-JAw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2867" y="112"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="fpu-A8-twa">
+            <objects>
+                <viewController id="XKQ-Uq-FJO" customClass="ProfileViewController" customModule="UniversityHW" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H4U-5A-tfU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="Cvo-ew-NIu">
+                                <rect key="frame" x="97.5" y="45" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="d1W-iD-HgU"/>
+                                    <constraint firstAttribute="height" constant="180" id="qvS-Dw-U8F"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woU-0h-H0c" userLabel="nameLabel">
+                                <rect key="frame" x="155.5" y="275" width="64" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Cvo-ew-NIu" firstAttribute="top" secondItem="bbx-C5-aR0" secondAttribute="top" constant="45" id="3Ya-u6-qtN"/>
+                            <constraint firstItem="Cvo-ew-NIu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bbx-C5-aR0" secondAttribute="leading" constant="97" id="RnN-xL-6Vk"/>
+                            <constraint firstItem="woU-0h-H0c" firstAttribute="centerX" secondItem="H4U-5A-tfU" secondAttribute="centerX" id="Vod-1K-ARK"/>
+                            <constraint firstItem="Cvo-ew-NIu" firstAttribute="centerX" secondItem="H4U-5A-tfU" secondAttribute="centerX" id="tnY-AP-33X"/>
+                            <constraint firstItem="woU-0h-H0c" firstAttribute="top" secondItem="Cvo-ew-NIu" secondAttribute="bottom" constant="50" id="toY-Px-7oS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bbx-C5-aR0"/>
+                    </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="woU-0h-H0c" id="Ggv-Ml-nkQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iXX-T9-PNG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3605.5999999999999" y="109.29535232383809"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="LeS-MJ-eTg">
@@ -230,6 +273,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="user" width="256" height="256"/>
         <image name="webinar" width="256" height="256"/>
     </resources>
 </document>
