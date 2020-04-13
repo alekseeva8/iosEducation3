@@ -11,20 +11,14 @@ import UIKit
 class CollectionViewController: UIViewController {
 
     var collectionView: UICollectionView
-    //let arrayOfStudents = DataHandler().handle()
-    //var arrayOfStudents: [Student] = []
-
-    let activityIndicator = UIActivityIndicatorView(style: .large)
+    var arrayOfStudents: [Student] = []
 
        //инициализация CollectionView
        required init?(coder: NSCoder) {
            let layout = UICollectionViewFlowLayout()
-           //layout.itemSize = CGSize(width: 200, height: 300)
-           //layout.minimumLineSpacing = 10
            self.collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
            super.init(coder: coder)
        }
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,25 +32,18 @@ class CollectionViewController: UIViewController {
         collectionView.delegate = self
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: CollectionViewCell.reuseID)
 
-//        collectionView.addSubview(activityIndicator)
-//        activityIndicatorLayout()
-//        activityIndicator.startAnimating()
-
         // добавить сюда загрузку из Network
-
-        APIHandler.shared.getData {
+        DataHandler.shared.handle { (arrayOfStudents) in
             self.collectionView.reloadData()
+            self.arrayOfStudents = arrayOfStudents
 
-            //сохранение в файл массива имен студентов (либо массив [Student])
+            //сохранение в файл массива имен студентов
             var arrayOfStudentNames: [String] = []
-            let newArrayOfStudents = APIHandler.shared.arrayOfStudents
-            newArrayOfStudents.forEach { (student) in
-                //print(student.name)
+            arrayOfStudents.forEach { (student) in
                 arrayOfStudentNames.append(student.name)
             }
-            StorageHandler().saveToStorage(arrayOfStudentNames: arrayOfStudentNames)
+            StorageHandler().saveToStorage(array: arrayOfStudentNames)
         }
-
 
         //добавить сюда unwindSegue
                 }
@@ -67,7 +54,8 @@ class CollectionViewController: UIViewController {
 extension CollectionViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        APIHandler.shared.arrayOfStudents.count
+        //APIHandler.shared.arrayOfStudents.count
+        arrayOfStudents.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -78,7 +66,8 @@ extension CollectionViewController: UICollectionViewDataSource {
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.borderWidth = 2
 
-        cell.nameLabel.text = APIHandler.shared.arrayOfStudents[indexPath.row].name
+        //cell.nameLabel.text = APIHandler.shared.arrayOfStudents[indexPath.row].name
+        cell.nameLabel.text = arrayOfStudents[indexPath.row].name
 
         return cell
 }
@@ -98,23 +87,8 @@ extension CollectionViewController {
 
     //чтобы ячейки не доставали до краев collectionview на 10
     collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-
-//        collectionView.topAnchor.constraint(equalTo: labelStudents.bottomAnchor, constant: 8).isActive = true
     }
 
-//    func cellDesign(cell: CollectionViewCell) {
-//    cell.backgroundColor = .white
-//    cell.layer.borderColor = UIColor.black.cgColor
-//    cell.layer.borderWidth = 2
-//    }
-
-    func activityIndicatorLayout() {
-        activityIndicator.color = .systemBlue
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicator.centerYAnchor.constraint(equalTo: collectionView.centerYAnchor).isActive = true
-        activityIndicator.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor).isActive = true
-        activityIndicator.hidesWhenStopped = true
-    }
 }
 
 //MARK: - Delegate

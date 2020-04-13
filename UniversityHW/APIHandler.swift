@@ -10,14 +10,14 @@ import Foundation
 
 class APIHandler {
     //singleton
-    static let shared = APIHandler()
-    private init() {
-       }
+//    static let shared = APIHandler()
+//    private init() {
+//       }
 
     //arrayOfStudents будет содержать полученные данные
     var arrayOfStudents: [Student] = []
 
-    func getData(completion: @escaping () -> Void) {
+    func getData(completion: @escaping ([Student]) -> Void) {
             let session = URLSession.shared
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/users") else {return}
         let task = session.dataTask(with: url) {(data, response, error) in
@@ -28,14 +28,12 @@ class APIHandler {
             print(data)
             do {
                 let json = try JSONDecoder().decode([StudentAPI].self, from: data)
-                //print(json)
                 json.forEach { (one) in
-                    //print(one.name)
                     self.arrayOfStudents.append(Student(name: one.name))
                 }
                 //запуск completion (замыкания, которое будет обновлять collectionView) обязательно выполним на основном потоке
                             DispatchQueue.main.async {
-                            completion()
+                                completion(self.arrayOfStudents)
                             }
                         } catch let jsonError {
                             print(jsonError)
@@ -45,9 +43,9 @@ class APIHandler {
     }
 
 //   КАК  вернуть данные типа Data !!!
-//    func requestDataToAPI() -> Data {
+//    func requestDataToAPI(completion: @escaping () -> Void) -> Data {
 //        let session = URLSession.shared
-//        var dataReceived: Data?
+//        var dataReceived = Data()
 //        let url = URL(string: "https://jsonplaceholder.typicode.com/users")! //else {
 //            //return dataReceived - исправить!!!!!!!!!!!!!
 //            //return dataReceived
@@ -59,6 +57,9 @@ class APIHandler {
 //                guard let dataReceived = data else {return}
 //    }
 //        task.resume()
+//        DispatchQueue.main.async {
+//        completion()
+//        }
 //        return dataReceived
 //    }
 

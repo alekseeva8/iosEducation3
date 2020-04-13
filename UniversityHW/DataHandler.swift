@@ -11,15 +11,24 @@ import  UIKit
 
 class  DataHandler {
 
-    //let apiHandler = APIHandler()
-    //let parseHandler = ParseHandler()
-    //let storageHandler = StorageHandler(storage: <#Storage#>)
+        static let shared = DataHandler()
+        private init() {
+           }
 
-//    func handle() {
-//        let dataRecieved = apiHandler.requestDataToAPI()
-//        let arrayOfStudents = parseHandler.parse(data: dataRecieved)
-//        //storageHandler.saveToStorage(array: arrayOfStudents)
-//    }
+    let apiHandler = APIHandler()
+    //let parseHandler = ParseHandler()
+    //let storageHandler = StorageHandler(storage: Storage)
+
+    //var arrayOfStudents: [Student] = []
+
+    func handle(completion: @escaping ([Student]) -> Void) {
+        apiHandler.getData(completion: completion)
+        //arrayOfStudents = apiHandler.getData()
+
+        //let dataRecieved = apiHandler.requestDataToAPI()
+        //let arrayOfStudents = parseHandler.parse(data: dataRecieved)
+        //storageHandler.saveToStorage(array: arrayOfStudents)
+    }
 
 
 }

@@ -11,12 +11,12 @@ import Foundation
 class StorageHandler {
 
     //file storage (writing)
-    func saveToStorage(arrayOfStudentNames: [String]) {
+    func saveToStorage(array: [String]) {
     //func userInfoInFileStorage(userInfo: [String: String]) {
         let urls = FileManager.default.urls(for: .documentDirectory, in: .allDomainsMask)
         guard let fileURL = urls.first?.appendingPathComponent("students.txt") else {return}
         do {
-            let userInfoData = try JSONEncoder().encode(arrayOfStudentNames)
+            let userInfoData = try JSONEncoder().encode(array)
                 try userInfoData.write(to: fileURL)
             print("success")
             print ("\(fileURL)")
