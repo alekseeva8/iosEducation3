@@ -11,6 +11,8 @@ import UIKit
 class CollectionViewController: UIViewController {
 
     var collectionView: UICollectionView
+    //let arrayOfStudents = DataHandler().handle()
+    //var arrayOfStudents: [Student] = []
 
     let activityIndicator = UIActivityIndicatorView(style: .large)
 
@@ -26,7 +28,7 @@ class CollectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //почему не отображеется ???????????????????????
+        //почему не отображеется ?????????????????
         title = "Students List"
 
         view.addSubview(collectionView)
@@ -42,6 +44,20 @@ class CollectionViewController: UIViewController {
 
         // добавить сюда загрузку из Network
 
+        APIHandler.shared.getData {
+            self.collectionView.reloadData()
+
+            //сохранение в файл массива имен студентов (либо массив [Student])
+            var arrayOfStudentNames: [String] = []
+            let newArrayOfStudents = APIHandler.shared.arrayOfStudents
+            newArrayOfStudents.forEach { (student) in
+                //print(student.name)
+                arrayOfStudentNames.append(student.name)
+            }
+            StorageHandler().saveToStorage(arrayOfStudentNames: arrayOfStudentNames)
+        }
+
+
         //добавить сюда unwindSegue
                 }
     }
@@ -49,8 +65,9 @@ class CollectionViewController: UIViewController {
 
 //MARK: - Data Source
 extension CollectionViewController: UICollectionViewDataSource {
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        APIHandler.shared.arrayOfStudents.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -60,6 +77,8 @@ extension CollectionViewController: UICollectionViewDataSource {
         cell.backgroundColor = .white
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.borderWidth = 2
+
+        cell.nameLabel.text = APIHandler.shared.arrayOfStudents[indexPath.row].name
 
         return cell
 }

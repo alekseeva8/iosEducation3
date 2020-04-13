@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import  UIKit
 
 class  DataHandler {
 
@@ -14,9 +15,11 @@ class  DataHandler {
     //let parseHandler = ParseHandler()
     //let storageHandler = StorageHandler(storage: <#Storage#>)
 
-    func handle() {
-        //let dataRecieved = apiHandler.requestDataToAPI()
-        //let array = parseHandler.parse(data: dataRecieved)
-        //storageHandler.saveToStorage(array: arrayOfStudents)
-    }
+//    func handle() {
+//        let dataRecieved = apiHandler.requestDataToAPI()
+//        let arrayOfStudents = parseHandler.parse(data: dataRecieved)
+//        //storageHandler.saveToStorage(array: arrayOfStudents)
+//    }
+
+
 }

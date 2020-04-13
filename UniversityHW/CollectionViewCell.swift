@@ -25,23 +25,15 @@ class CollectionViewCell: UICollectionViewCell {
         label.textColor = .systemBlue
         return label
     }()
-    let surnameLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-        label.textColor = .systemBlue
-        return label
-    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
         addSubview(studentImageView)
         addSubview(nameLabel)
-        addSubview(surnameLabel)
 
         studentImageView.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        surnameLabel.translatesAutoresizingMaskIntoConstraints = false
 
         studentImageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         studentImageView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
@@ -49,8 +41,6 @@ class CollectionViewCell: UICollectionViewCell {
         studentImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 1/2).isActive = true
         nameLabel.topAnchor.constraint(equalTo: studentImageView.bottomAnchor, constant: 20).isActive = true
         nameLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        surnameLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 6).isActive = true
-        surnameLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
 
         
     }

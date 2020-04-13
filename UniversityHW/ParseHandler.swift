@@ -11,15 +11,13 @@ import Foundation
 class ParseHandler {
 
     //arrayOfStudents будет содержать полученные данные
-    var arrayOfStudents: [Student] = []
-
+//    var arrayOfStudents: [Student] = []
+//
 //    func parse(data: Data, completion: @escaping () -> Void) -> [Student] {
 //        do {
-//        let json = try JSONDecoder().decode(SWPeople.self, from: data)
-//        json.people.forEach { (person) in
-//        self.arrayOfStudents.append(Student(name: person.name))
-//        }
-//        //запуск completion (замыкания, которое обновляет collectionView) обязательновыполним на основном потоке
+//        let json = try JSONDecoder().decode(StudentAPI.self, from: data)
+//            self.arrayOfStudents.append(Student(name: json.name))
+//        //запуск completion обязательно выполним на основном потоке
 //        DispatchQueue.main.async {
 //        completion()
 //        }
