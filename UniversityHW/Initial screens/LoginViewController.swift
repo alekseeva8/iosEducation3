@@ -43,13 +43,13 @@ class LoginViewController: UIViewController {
         var decodedUserInfo: [String : String] = [:]
         let urls = FileManager.default.urls(for: .documentDirectory, in: .allDomainsMask)
         if let fileURL = urls.first?.appendingPathComponent("users.txt") {
-        do {
-            let dataFromFile = try Data(contentsOf: fileURL)
-            let decoder = JSONDecoder()
-            decodedUserInfo = try decoder.decode([String: String].self, from: dataFromFile)
-            print(decodedUserInfo)
-        } catch {
-        }
+            do {
+                let dataFromFile = try Data(contentsOf: fileURL)
+                let decoder = JSONDecoder()
+                decodedUserInfo = try decoder.decode([String: String].self, from: dataFromFile)
+                print(decodedUserInfo)
+            } catch {
+            }
         }
         return decodedUserInfo
     }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import  CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,6 +30,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
+    //MARK: - Core Data stack
+    //создание контейнера (копии хранилища) - связующего звена м/у хранилищем и нашим приложением/ model object
+    //инициализациия его только при запросе (может никогда и не проинициализировться)
+    
+    lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "DataBase")
+        container.loadPersistentStores (completionHandler: {(storeDescription, error) in
+            if let error = error {
+                fatalError("Error: \(error)")
+            }
+        })
+        return container
+    }()
+    
+    // MARK: - Core Data Saving support
+    
+    //обращаемся к копии хранилища (persistentContainer.viewContext) и если значения в этой копии менялись - сохранить
+    func saveContext() {
+        //let context - копия хранилища
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                fatalError("Error: \(error)")
+            }
+        }
+    }
+    
 }
 
