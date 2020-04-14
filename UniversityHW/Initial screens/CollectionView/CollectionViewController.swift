@@ -22,7 +22,7 @@ class CollectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //почему не отображеется ?????????????????
+        //почему не отображеется ???????
         title = "Students List"
 
         view.addSubview(collectionView)
@@ -33,19 +33,18 @@ class CollectionViewController: UIViewController {
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: CollectionViewCell.reuseID)
 
 
-        // добавить сюда загрузку из Network
+        // загрузка из Network
         DataHandler.shared.handle { (arrayOfStudents) in
             self.collectionView.reloadData()
             self.arrayOfStudents = arrayOfStudents
 
             //сохранение в файл массива студентов (в виде массива словарей)
-            let fileStorage = FileStorageManager()
-            StorageHandler(storage: fileStorage).handle(array: arrayOfStudents)
-            //сохранение через coreData
-            let coredataStorage = DatabaseManager()
-            StorageHandler(storage: coredataStorage).handle(array: arrayOfStudents)
+            StorageHandler(storage: .fileStorage).handle(array: arrayOfStudents)
 
-            coredataStorage.fetchCoreData()
+            //сохранение через coreData
+            StorageHandler(storage: .coredataStorage).handle(array: arrayOfStudents)
+            //вытягивание данных из coreData
+            DatabaseManager().fetchCoreData()
         }
 
         //добавить сюда unwindSegue

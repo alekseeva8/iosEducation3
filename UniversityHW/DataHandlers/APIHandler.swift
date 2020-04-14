@@ -9,10 +9,6 @@
 import Foundation
 
 class APIHandler {
-    //singleton
-//    static let shared = APIHandler()
-//    private init() {
-//       }
 
     //arrayOfStudents будет содержать полученные данные
     var arrayOfStudents: [Student] = []
@@ -41,26 +37,5 @@ class APIHandler {
                     }
                 task.resume()
     }
-
-//   КАК  вернуть данные типа Data !!!
-//    func requestDataToAPI(completion: @escaping () -> Void) -> Data {
-//        let session = URLSession.shared
-//        var dataReceived = Data()
-//        let url = URL(string: "https://jsonplaceholder.typicode.com/users")! //else {
-//            //return dataReceived
-//       // }
-//        let task = session.dataTask(with: url) {(data, response, error) in
-//                if let error = error {
-//                    print(error)
-//                }
-//                guard let dataReceived = data else {return}
-//    }
-//        task.resume()
-//        DispatchQueue.main.async {
-//        completion()
-//        }
-//        return dataReceived
-//    }
-
 }
 

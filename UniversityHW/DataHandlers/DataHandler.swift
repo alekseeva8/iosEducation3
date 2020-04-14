@@ -19,11 +19,8 @@ class  DataHandler {
     //let parseHandler = ParseHandler()
     //let storageHandler = StorageHandler(storage: Storage)
 
-    //var arrayOfStudents: [Student] = []
-
     func handle(completion: @escaping ([Student]) -> Void) {
         apiHandler.getData(completion: completion)
-        //arrayOfStudents = apiHandler.getData()
 
         //let dataRecieved = apiHandler.requestDataToAPI()
         //let arrayOfStudents = parseHandler.parse(data: dataRecieved)

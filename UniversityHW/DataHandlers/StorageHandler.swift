@@ -16,13 +16,35 @@ protocol Storage {
 
 class StorageHandler {
 
-        let storage: Storage
-        init(storage: Storage) {
-            self.storage = storage
-        }
+    let storage: StorageType
+    enum StorageType {
+        case fileStorage, coredataStorage
+    }
 
-        func handle(array: [Student]) {
-            storage.save(array: array)
+    init(storage: StorageType) {
+        self.storage = storage
+    }
+
+    func handle(array: [Student]) {
+        switch storage {
+        case .fileStorage: FileStorageManager().save(array: array)
+        case .coredataStorage: DatabaseManager().save(array: array)
         }
+    }
 }
 
+//вар2 без enum (работает)
+/*
+class StorageHandler2 {
+
+    let storage: Storage
+
+    init(storage: Storage) {
+        self.storage = storage
+    }
+
+    func handle(array: [Student]) {
+        storage.save(array: array)
+    }
+}
+ */
