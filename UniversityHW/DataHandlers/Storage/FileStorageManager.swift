@@ -14,12 +14,11 @@ class  FileStorageManager: Storage {
         guard let fileURL = urls.first?.appendingPathComponent("students.txt") else {return}
         do {
             let userInfoData = try JSONEncoder().encode(array)
-                try userInfoData.write(to: fileURL)
+            try userInfoData.write(to: fileURL)
             print("success FileStorage")
             print ("\(fileURL)")
         } catch {
             print(error)
         }
-
     }
 }

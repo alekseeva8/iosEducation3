@@ -9,16 +9,16 @@
 import Foundation
 
 class APIHandler {
-
+    
     //arrayOfStudents будет содержать полученные данные
     var arrayOfStudents: [Student] = []
-
-    func getData(completion: @escaping ([Student]) -> Void) {
-            let session = URLSession.shared
-        guard let url = URL(string: "https://jsonplaceholder.typicode.com/users") else {return}
+    
+    func getData(urlString: String, completion: @escaping ([Student]) -> Void) {
+        let session = URLSession.shared
+        guard let url = URL(string: urlString) else {return}
         let task = session.dataTask(with: url) {(data, response, error) in
             if let error = error {
-            print(error)
+                print(error)
             }
             guard let data = data else {return}
             print(data)
@@ -28,14 +28,14 @@ class APIHandler {
                     self.arrayOfStudents.append(Student(name: one.name))
                 }
                 //запуск completion (замыкания, которое будет обновлять collectionView) обязательно выполним на основном потоке
-                            DispatchQueue.main.async {
-                                completion(self.arrayOfStudents)
-                            }
-                        } catch let jsonError {
-                            print(jsonError)
-                        }
-                    }
-                task.resume()
+                DispatchQueue.main.async {
+                    completion(self.arrayOfStudents)
+                }
+            } catch let jsonError {
+                print(jsonError)
+            }
+        }
+        task.resume()
     }
 }
 

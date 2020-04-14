@@ -11,7 +11,6 @@ import Foundation
 // [[String:String]]
 // [[String : Any]]
 
-
 struct StudentAPI: Codable {
     let name: String
 }

@@ -43,9 +43,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         return container
     }()
-
+    
     // MARK: - Core Data Saving support
-
+    
     //обращаемся к копии хранилища (persistentContainer.viewContext) и если значения в этой копии менялись - сохранить
     func saveContext() {
         //let context - копия хранилища
@@ -58,6 +58,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
+    
 }
 

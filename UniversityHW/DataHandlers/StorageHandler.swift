@@ -15,16 +15,16 @@ protocol Storage {
 }
 
 class StorageHandler {
-
+    
     let storage: StorageType
     enum StorageType {
         case fileStorage, coredataStorage
     }
-
+    
     init(storage: StorageType) {
         self.storage = storage
     }
-
+    
     func handle(array: [Student]) {
         switch storage {
         case .fileStorage: FileStorageManager().save(array: array)

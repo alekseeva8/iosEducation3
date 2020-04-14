@@ -11,19 +11,19 @@ import Foundation
 class ParseHandler {
 
     //arrayOfStudents будет содержать полученные данные
-//    var arrayOfStudents: [Student] = []
-//
-//    func parse(data: Data, completion: @escaping () -> Void) -> [Student] {
-//        do {
-//        let json = try JSONDecoder().decode(StudentAPI.self, from: data)
-//            self.arrayOfStudents.append(Student(name: json.name))
-//        //запуск completion обязательно выполним на основном потоке
-//        DispatchQueue.main.async {
-//        completion()
-//        }
-//    } catch let jsonError {
-//        print(jsonError)
-//    }
-//        return arrayOfStudents
-//    }
+    //    var arrayOfStudents: [Student] = []
+    //
+    //    func parse(data: Data, completion: @escaping () -> Void) -> [Student] {
+    //        do {
+    //        let json = try JSONDecoder().decode(StudentAPI.self, from: data)
+    //            self.arrayOfStudents.append(Student(name: json.name))
+    //        //запуск completion обязательно выполним на основном потоке
+    //        DispatchQueue.main.async {
+    //        completion()
+    //        }
+    //    } catch let jsonError {
+    //        print(jsonError)
+    //    }
+    //        return arrayOfStudents
+    //    }
 }
