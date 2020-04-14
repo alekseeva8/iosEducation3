@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Student {
+struct Student: Codable {
     var name: String
 
     init(name: String) {

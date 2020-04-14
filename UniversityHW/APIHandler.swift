@@ -47,7 +47,6 @@ class APIHandler {
 //        let session = URLSession.shared
 //        var dataReceived = Data()
 //        let url = URL(string: "https://jsonplaceholder.typicode.com/users")! //else {
-//            //return dataReceived - исправить!!!!!!!!!!!!!
 //            //return dataReceived
 //       // }
 //        let task = session.dataTask(with: url) {(data, response, error) in

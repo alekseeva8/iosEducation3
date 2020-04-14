@@ -11,7 +11,7 @@ import Foundation
 class StorageHandler {
 
     //file storage (writing)
-    func saveToStorage(array: [String]) {
+    func saveToStorage(array: [Student]) {
     //func userInfoInFileStorage(userInfo: [String: String]) {
         let urls = FileManager.default.urls(for: .documentDirectory, in: .allDomainsMask)
         guard let fileURL = urls.first?.appendingPathComponent("students.txt") else {return}

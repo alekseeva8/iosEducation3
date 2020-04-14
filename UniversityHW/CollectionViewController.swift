@@ -32,22 +32,21 @@ class CollectionViewController: UIViewController {
         collectionView.delegate = self
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: CollectionViewCell.reuseID)
 
+
         // добавить сюда загрузку из Network
         DataHandler.shared.handle { (arrayOfStudents) in
             self.collectionView.reloadData()
             self.arrayOfStudents = arrayOfStudents
 
-            //сохранение в файл массива имен студентов
-            var arrayOfStudentNames: [String] = []
-            arrayOfStudents.forEach { (student) in
-                arrayOfStudentNames.append(student.name)
-            }
-            StorageHandler().saveToStorage(array: arrayOfStudentNames)
+            //сохранение в файл массива студентов (в виде массива словарей)
+            StorageHandler().saveToStorage(array: arrayOfStudents)
         }
 
         //добавить сюда unwindSegue
                 }
     }
+
+
 
 
 //MARK: - Data Source
