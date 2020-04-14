@@ -39,14 +39,18 @@ class CollectionViewController: UIViewController {
             self.arrayOfStudents = arrayOfStudents
 
             //сохранение в файл массива студентов (в виде массива словарей)
-            StorageHandler().saveToStorage(array: arrayOfStudents)
+            let fileStorage = FileStorageManager()
+            StorageHandler(storage: fileStorage).handle(array: arrayOfStudents)
+            //сохранение через coreData
+            let coredataStorage = DatabaseManager()
+            StorageHandler(storage: coredataStorage).handle(array: arrayOfStudents)
+
+            coredataStorage.fetchCoreData()
         }
 
         //добавить сюда unwindSegue
                 }
     }
-
-
 
 
 //MARK: - Data Source
