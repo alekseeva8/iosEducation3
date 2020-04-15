@@ -163,7 +163,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="Cvo-ew-NIu">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="student-2" translatesAutoresizingMaskIntoConstraints="NO" id="Cvo-ew-NIu">
                                 <rect key="frame" x="97.5" y="45" width="180" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="d1W-iD-HgU"/>
@@ -273,7 +273,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="user" width="256" height="256"/>
+        <image name="student-2" width="256" height="256"/>
         <image name="webinar" width="256" height="256"/>
     </resources>
 </document>

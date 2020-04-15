@@ -75,7 +75,6 @@
 				F3344FB8243F795600E411B4 /* RegistrationViewController.swift */,
 				F3726E07243DD7B000C37F00 /* LoginViewController.swift */,
 				F3726E19243EEC3E00C37F00 /* WelcomeViewController.swift */,
-				F3344FD8244571D500E411B4 /* CollectionView */,
 			);
 			path = "Initial screens";
 			sourceTree = "<group>";
@@ -124,6 +123,7 @@
 				F3726E03243DD7B000C37F00 /* AppDelegate.swift */,
 				F3726E05243DD7B000C37F00 /* SceneDelegate.swift */,
 				F3344FD72445717400E411B4 /* Initial screens */,
+				F3344FD8244571D500E411B4 /* CollectionView */,
 				F3344FD024449FF300E411B4 /* ProfileViewController.swift */,
 				F3344FD92445720700E411B4 /* DataHandlers */,
 				F3344FCC24431FE800E411B4 /* Student.swift */,
@@ -383,6 +383,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9W292R69FX;
 				INFOPLIST_FILE = UniversityHW/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -390,7 +391,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = education.UniversityHW;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -401,6 +402,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9W292R69FX;
 				INFOPLIST_FILE = UniversityHW/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -408,7 +410,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = education.UniversityHW;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -17,7 +17,7 @@ class  DataHandler {
 
     let apiHandler = APIHandler()
     //let parseHandler = ParseHandler()
-    //let storageHandler = StorageHandler(storage: Storage)
+    //let storageHandler = StorageHandler(storage: StorageType)
 
     let urlString = "https://jsonplaceholder.typicode.com/users"
 
@@ -26,6 +26,6 @@ class  DataHandler {
 
         //let dataRecieved = apiHandler.requestDataToAPI()
         //let arrayOfStudents = parseHandler.parse(data: dataRecieved)
-        //storageHandler.saveToStorage(array: arrayOfStudents)
+        //storageHandler.save(array: arrayOfStudents)
     }
 }

@@ -16,7 +16,7 @@ class CollectionViewCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.backgroundColor = .white
         imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: "user")
+        imageView.image = UIImage(named: "specialization")
         return imageView
     }()
     let nameLabel: UILabel = {
