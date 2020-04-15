@@ -14,6 +14,7 @@ class RegistrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(named: "BackgroundColor")
     }
     
     @IBAction func buttonPressed(_ sender: Any) {

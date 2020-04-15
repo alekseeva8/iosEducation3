@@ -78,7 +78,7 @@ extension CollectionViewController: UICollectionViewDataSource {
 //MARK: - Layout, Design, ActivityIndicator
 extension CollectionViewController {
     func collectionViewLayout() {
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = UIColor(named: "BackgroundColor")
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false

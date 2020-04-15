@@ -14,6 +14,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Profile"
+        view.backgroundColor = UIColor(named: "BackgroundColor")
 
         nameLabel.text = ProfileManager.shared.name
 

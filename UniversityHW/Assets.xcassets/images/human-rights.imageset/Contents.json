@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "human-rights.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "human-rights.png",
       "scale" : "2x"
     },
     {

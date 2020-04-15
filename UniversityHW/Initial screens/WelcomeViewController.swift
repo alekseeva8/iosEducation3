@@ -14,6 +14,7 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "WelcomeVC"
+        view.backgroundColor = UIColor(named: "BackgroundColor")
     }
 
     @IBAction func buttonTapped(_ sender: Any) {

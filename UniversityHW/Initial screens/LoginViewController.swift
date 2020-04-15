@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "LoginVC"
+        view.backgroundColor = UIColor(named: "BackgroundColor")
     }
 
     @IBAction func loginButtonPressed(_ sender: Any) {
