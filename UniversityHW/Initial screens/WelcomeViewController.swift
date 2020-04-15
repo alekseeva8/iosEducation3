@@ -11,10 +11,13 @@ import UIKit
 class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var studentsListButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "WelcomeVC"
         view.backgroundColor = UIColor(named: "BackgroundColor")
+        studentsListButton.layer.cornerRadius = 10
     }
 
     @IBAction func buttonTapped(_ sender: Any) {

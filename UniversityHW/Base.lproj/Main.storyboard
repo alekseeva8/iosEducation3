@@ -130,6 +130,7 @@
                     <navigationItem key="navigationItem" id="E0F-Ia-shM"/>
                     <connections>
                         <outlet property="label" destination="YC1-xb-H6l" id="hIV-Ar-x9d"/>
+                        <outlet property="studentsListButton" destination="MGm-NM-x2o" id="gsq-5i-emn"/>
                         <segue destination="cJu-wV-2YT" kind="presentation" identifier="fromWelcomeVCToCollectionVC" id="BNM-hF-RuH"/>
                     </connections>
                 </viewController>
@@ -225,7 +226,7 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OuE-UJ-imN">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OuE-UJ-imN" userLabel="registerButton">
                                 <rect key="frame" x="87.5" y="313.5" width="200" height="40"/>
                                 <color key="backgroundColor" red="0.96130555870000001" green="0.90916923549999995" blue="0.41556767369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -263,6 +264,7 @@
                     <navigationItem key="navigationItem" id="ITz-5Y-2Ob"/>
                     <connections>
                         <outlet property="passwordTextField" destination="nrj-Pd-BTK" id="yCI-r2-VdI"/>
+                        <outlet property="registerButton" destination="OuE-UJ-imN" id="ID9-cy-Awi"/>
                         <outlet property="usernameTextField" destination="fLb-xn-Qe8" id="Vvt-Fw-PLC"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="RegistrVCToLoginVC" modalPresentationStyle="fullScreen" id="aEo-iU-qyh"/>
                     </connections>

@@ -37,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="human-rights" width="512" height="512"/>
+        <image name="human-rights" width="256" height="256"/>
     </resources>
 </document>

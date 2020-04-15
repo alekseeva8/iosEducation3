@@ -17,6 +17,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         title = "LoginVC"
         view.backgroundColor = UIColor(named: "BackgroundColor")
+        loginButton.layer.cornerRadius = 20
     }
 
     @IBAction func loginButtonPressed(_ sender: Any) {

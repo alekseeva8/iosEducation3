@@ -11,10 +11,12 @@ import UIKit
 class RegistrationViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
+    @IBOutlet weak var registerButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "BackgroundColor")
+        registerButton.layer.cornerRadius = 20
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
