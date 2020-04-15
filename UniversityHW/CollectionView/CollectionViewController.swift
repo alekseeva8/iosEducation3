@@ -88,7 +88,7 @@ extension CollectionViewController {
         collectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
 
         //чтобы ячейки не доставали до краев collectionview на 10
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
 
 }
@@ -97,7 +97,7 @@ extension CollectionViewController {
 extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemWidth = (UIScreen.main.bounds.width - 20 - 20 - 10/2)/2
-        return CGSize(width: itemWidth, height: 300)
+        return CGSize(width: itemWidth, height: 250)
     }
 }
 

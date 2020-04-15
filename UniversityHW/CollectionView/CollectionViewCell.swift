@@ -23,6 +23,8 @@ class CollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         label.textColor = .systemBlue
+        label.numberOfLines = 2
+        label.textAlignment = .center
         return label
     }()
 
@@ -35,15 +37,15 @@ class CollectionViewCell: UICollectionViewCell {
         studentImageView.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
 
-        studentImageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        studentImageView.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
         studentImageView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         studentImageView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         studentImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 1/2).isActive = true
         nameLabel.topAnchor.constraint(equalTo: studentImageView.bottomAnchor, constant: 20).isActive = true
-        nameLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-
-        
+        nameLabel.leadingAnchor.constraint(equalTo: studentImageView.leadingAnchor, constant: 5).isActive = true
+        nameLabel.trailingAnchor.constraint(equalTo: studentImageView.trailingAnchor, constant: 5).isActive = true
     }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
