@@ -22,7 +22,7 @@ class CollectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //почему не отображеется ???????
+        //отобразить !!!!!!!!!
         title = "Students List"
         
         view.addSubview(collectionView)
@@ -46,6 +46,8 @@ class CollectionViewController: UIViewController {
             //вытягивание данных из coreData
             DatabaseManager().fetchCoreData()
         }
+        //вытягивание данных из coreData
+        //DatabaseManager().fetchCoreData()
         
         //добавить сюда unwindSegue
     }
