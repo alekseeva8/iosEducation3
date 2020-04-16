@@ -44,10 +44,6 @@ class DatabaseManager: Storage {
                 return Student(name: item.name ?? "")
             }
             print(newEmployees)
-            //completion(newEmployees)
-            //добавить completion (newEmployees - принимающий [Student]), в collectionView вытаскиваем этот массив студентов и можно делать проверку:
-            //если есть значения ([Student].count !=0) - выполнить DatabaseManager().fetchCoreData()
-            //иначе - выполнить загрузку из сети + StorageHandler(storage: .coredataStorage).handle(array: arrayOfStudents)
             students.forEach { (e) in
                 managedContext.delete(e)
             }
