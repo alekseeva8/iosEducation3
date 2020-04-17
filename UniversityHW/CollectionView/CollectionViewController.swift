@@ -33,24 +33,24 @@ class CollectionViewController: UIViewController {
         
         
         // загрузка из Network
-        DataHandler.shared.handle { (arrayOfStudents) in
+        ParseHandler().getData() { (studentsAPI) in
+            studentsAPI.forEach { (one) in
+                self.arrayOfStudents.append(Student(name: one.name))
+            }
             self.collectionView.reloadData()
-            self.arrayOfStudents = arrayOfStudents
-            
+
             //сохранение в файл массива студентов (в виде массива словарей)
-            StorageHandler(storage: .fileStorage).handle(array: arrayOfStudents)
-            
+            StorageHandler(storage: .fileStorage).handle(array: self.arrayOfStudents)
+
             //сохранение через coreData
-            StorageHandler(storage: .coredataStorage).handle(array: arrayOfStudents)
+            StorageHandler(storage: .coredataStorage).handle(array: self.arrayOfStudents)
             //вытягивание данных из coreData
             DatabaseManager().fetchCoreData()
         }
-        //вытягивание данных из coreData
-        //DatabaseManager().fetchCoreData()
-        
-        //добавить сюда unwindSegue
     }
-}
+    }
+        //добавить сюда unwindSegue
+   // }
 
 
 //MARK: - Data Source

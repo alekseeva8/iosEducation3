@@ -10,10 +10,7 @@ import Foundation
 
 class APIHandler {
     
-    //arrayOfStudents будет содержать полученные данные
-    var arrayOfStudents: [Student] = []
-    
-    func getData(urlString: String, completion: @escaping ([Student]) -> Void) {
+     func requestDataToAPI(urlString: String, completion: @escaping (Data) -> Void) {
         let session = URLSession.shared
         guard let url = URL(string: urlString) else {return}
         let task = session.dataTask(with: url) {(data, response, error) in
@@ -22,20 +19,12 @@ class APIHandler {
             }
             guard let data = data else {return}
             print(data)
-            do {
-                let json = try JSONDecoder().decode([StudentAPI].self, from: data)
-                json.forEach { (one) in
-                    self.arrayOfStudents.append(Student(name: one.name))
-                }
-                //запуск completion (замыкания, которое будет обновлять collectionView) обязательно выполним на основном потоке
-                DispatchQueue.main.async {
-                    completion(self.arrayOfStudents)
-                }
-            } catch let jsonError {
-                print(jsonError)
-            }
+            completion(data)
         }
         task.resume()
     }
+
 }
+
+
 
