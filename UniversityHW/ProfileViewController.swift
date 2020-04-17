@@ -17,7 +17,6 @@ class ProfileViewController: UIViewController {
         view.backgroundColor = UIColor(named: "BackgroundColor")
 
         nameLabel.text = ProfileManager.shared.name
-
     }
 
 }

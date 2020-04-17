@@ -22,7 +22,6 @@ class CollectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //отобразить !!!!!!!!!
         title = "Students List"
         
         view.addSubview(collectionView)

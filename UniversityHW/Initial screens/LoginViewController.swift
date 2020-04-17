@@ -13,13 +13,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "LoginVC"
-        self.navigationController?.isNavigationBarHidden = false
-        //self.navigationController?.setNavigationBarHidden(false, animated: true)
-        
         view.backgroundColor = UIColor(named: "BackgroundColor")
         loginButton.layer.cornerRadius = 20
     }

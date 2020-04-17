@@ -33,9 +33,6 @@ class RegistrationViewController: UIViewController {
             validator.isPasswordCorrect(password: password) == true {
             userInfoInFileStorage(userInfo: userInfo)
             performSegue(withIdentifier: "RegistrVCToLoginVC", sender: nil)
-//            guard let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") else {return}
-//            self.navigationController?.present(loginVC, animated: true, completion: nil)
-//            
         } else {
             validator.alertSending(self)
         }

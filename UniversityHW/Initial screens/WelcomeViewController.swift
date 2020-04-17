@@ -15,7 +15,6 @@ class WelcomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "WelcomeVC"
         view.backgroundColor = UIColor(named: "BackgroundColor")
         studentsListButton.layer.cornerRadius = 10
     }
