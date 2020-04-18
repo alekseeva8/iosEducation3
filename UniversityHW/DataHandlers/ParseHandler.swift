@@ -13,7 +13,7 @@ class ParseHandler {
     let urlString = "https://jsonplaceholder.typicode.com/users"
 
     func getData(completionHanndler: @escaping ([StudentAPI]) -> Void) {
-        APIHandler().requestDataToAPI(urlString: urlString) { (data) in
+        APIHandler.requestDataToAPI(urlString: urlString) { (data) in
             do {
                 let json = try JSONDecoder().decode([StudentAPI].self, from: data)
                 DispatchQueue.main.async {

@@ -32,25 +32,10 @@ class RegistrationViewController: UIViewController {
             validator.isLoginContainsCorrectSymbols(login: username) == true &&
             validator.isPasswordCorrect(password: password) == true {
             //сохранение данных пользователя
-            userInfoInFileStorage(userInfo: userInfo)
+        FileStorageManager.userInfoInFileStorage(userInfo: userInfo)
             performSegue(withIdentifier: "RegistrVCToLoginVC", sender: nil)
         } else {
             validator.alertSending(self)
         }
-    }
-    
-    //MARK: - File Storage (запись данных пользователя)
-    func userInfoInFileStorage(userInfo: [String: String]) {
-        let urls = FileManager.default.urls(for: .documentDirectory, in: .allDomainsMask)
-        guard let fileURL = urls.first?.appendingPathComponent("users.txt") else {return}
-        do {
-            let userInfoData = try JSONEncoder().encode(userInfo)
-            try userInfoData.write(to: fileURL)
-            print("success")
-            print ("\(fileURL)")
-        } catch {
-            print(error)
-        }
-        
     }
 }

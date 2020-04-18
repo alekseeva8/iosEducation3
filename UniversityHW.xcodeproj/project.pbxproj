@@ -25,6 +25,7 @@
 		F3726E10243DD7B100C37F00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3726E0E243DD7B100C37F00 /* LaunchScreen.storyboard */; };
 		F3726E18243EE8C100C37F00 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3726E17243EE8C100C37F00 /* Validator.swift */; };
 		F3726E1A243EEC3E00C37F00 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3726E19243EEC3E00C37F00 /* WelcomeViewController.swift */; };
+		F388CDC8244B6CA10046B2DD /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388CDC7244B6CA10046B2DD /* UserDefaults.swift */; };
 		F3FB78D32445AED500F18942 /* DataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3FB78D12445AED500F18942 /* DataBase.xcdatamodeld */; };
 		F3FB78E12445BE1200F18942 /* FileStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FB78E02445BE1200F18942 /* FileStorageManager.swift */; };
 		F3FB78E42445C31A00F18942 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FB78E32445C31A00F18942 /* DatabaseManager.swift */; };
@@ -51,6 +52,7 @@
 		F3726E11243DD7B100C37F00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3726E17243EE8C100C37F00 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		F3726E19243EEC3E00C37F00 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		F388CDC7244B6CA10046B2DD /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		F3FB78D22445AED500F18942 /* DataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataBase.xcdatamodel; sourceTree = "<group>"; };
 		F3FB78E02445BE1200F18942 /* FileStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorageManager.swift; sourceTree = "<group>"; };
 		F3FB78E32445C31A00F18942 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 		F3FB78E22445C2A000F18942 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				F388CDC7244B6CA10046B2DD /* UserDefaults.swift */,
 				F3FB78E02445BE1200F18942 /* FileStorageManager.swift */,
 				F3FB78E32445C31A00F18942 /* DatabaseManager.swift */,
 				F3FB78D12445AED500F18942 /* DataBase.xcdatamodeld */,
@@ -228,6 +231,7 @@
 				F3344FC52443188A00E411B4 /* StorageHandler.swift in Sources */,
 				F3726E04243DD7B000C37F00 /* AppDelegate.swift in Sources */,
 				F3344FD32444A6BE00E411B4 /* ProfileManager.swift in Sources */,
+				F388CDC8244B6CA10046B2DD /* UserDefaults.swift in Sources */,
 				F3FB78E42445C31A00F18942 /* DatabaseManager.swift in Sources */,
 				F3344FC12442F7AD00E411B4 /* CollectionViewController.swift in Sources */,
 				F3344FD124449FF300E411B4 /* ProfileViewController.swift in Sources */,
