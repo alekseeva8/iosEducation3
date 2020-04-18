@@ -10,20 +10,35 @@ import Foundation
 
 class ParseHandler {
 
-    //arrayOfStudents будет содержать полученные данные
-    //    var arrayOfStudents: [Student] = []
-    //
-    //    func parse(data: Data, completion: @escaping () -> Void) -> [Student] {
-    //        do {
-    //        let json = try JSONDecoder().decode(StudentAPI.self, from: data)
-    //            self.arrayOfStudents.append(Student(name: json.name))
-    //        //запуск completion обязательно выполним на основном потоке
-    //        DispatchQueue.main.async {
-    //        completion()
-    //        }
-    //    } catch let jsonError {
-    //        print(jsonError)
-    //    }
-    //        return arrayOfStudents
-    //    }
+    let urlString = "https://jsonplaceholder.typicode.com/users"
+
+    func getData(completionHanndler: @escaping ([StudentAPI]) -> Void) {
+        APIHandler().requestDataToAPI(urlString: urlString) { (data) in
+            do {
+                let json = try JSONDecoder().decode([StudentAPI].self, from: data)
+                DispatchQueue.main.async {
+                    completionHanndler(json)
+                }
+            }
+            catch let jsonError {
+                print(jsonError)
+            }
+        }
+    }
+}
+
+//protocol TypeConvertible: Codable {
+//    static var urlString: String {get}
+//}
+
+//struct StudentsAPI: Codable, TypeConvertible {
+//    static let urlString = "https://jsonplaceholder.typicode.com/users"
+//    var users: [StudentAPI]
+//}
+
+// [[String:String]]
+// [[String : Any]]
+
+struct StudentAPI: Codable {
+    let name: String
 }
