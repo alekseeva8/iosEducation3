@@ -13,6 +13,7 @@ import UIKit
 class DatabaseManager: Storage {
     var students: [StudentCD] = []
 
+//MARK: - Save in CoreData
     func save(array: [Student]) {
 
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
@@ -31,7 +32,7 @@ class DatabaseManager: Storage {
 
     }
 
-
+//MARK: - Fetch from CoreData
     func fetchCoreData() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext

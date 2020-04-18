@@ -11,15 +11,15 @@ import  UIKit
 
 class  DataHandler {
 
-    static let shared = DataHandler()
-    private init() {
-    }
+//    static let shared = DataHandler()
+//    private init() {
+//    }
 
     //let apiHandler = APIHandler()
-    let parseHandler = ParseHandler()
+    //let parseHandler = ParseHandler()
     //let storageHandler = StorageHandler(storage: StorageType)
 
-    let urlString = "https://jsonplaceholder.typicode.com/users"
+    //let urlString = "https://jsonplaceholder.typicode.com/users"
 
 //    func handle(completion: @escaping ([Student]) -> Void) {
 //        apiHandler.getData(urlString: urlString, completion: completion)

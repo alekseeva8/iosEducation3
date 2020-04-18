@@ -31,6 +31,7 @@ class RegistrationViewController: UIViewController {
         if validator.isLoginCorrect(login: username) == true &&
             validator.isLoginContainsCorrectSymbols(login: username) == true &&
             validator.isPasswordCorrect(password: password) == true {
+            //сохранение данных пользователя
             userInfoInFileStorage(userInfo: userInfo)
             performSegue(withIdentifier: "RegistrVCToLoginVC", sender: nil)
         } else {
@@ -38,7 +39,7 @@ class RegistrationViewController: UIViewController {
         }
     }
     
-    //MARK: - File Storage (запись данных)
+    //MARK: - File Storage (запись данных пользователя)
     func userInfoInFileStorage(userInfo: [String: String]) {
         let urls = FileManager.default.urls(for: .documentDirectory, in: .allDomainsMask)
         guard let fileURL = urls.first?.appendingPathComponent("users.txt") else {return}

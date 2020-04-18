@@ -43,7 +43,7 @@ class CollectionViewCell: UICollectionViewCell {
         studentImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 1/2).isActive = true
         nameLabel.topAnchor.constraint(equalTo: studentImageView.bottomAnchor, constant: 20).isActive = true
         nameLabel.leadingAnchor.constraint(equalTo: studentImageView.leadingAnchor, constant: 5).isActive = true
-        nameLabel.trailingAnchor.constraint(equalTo: studentImageView.trailingAnchor, constant: 5).isActive = true
+        nameLabel.trailingAnchor.constraint(equalTo: studentImageView.trailingAnchor, constant: -5).isActive = true
     }
 
     required init?(coder: NSCoder) {

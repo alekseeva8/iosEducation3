@@ -33,17 +33,17 @@ class CollectionViewController: UIViewController {
         
         
         // загрузка из Network
-        ParseHandler().getData() { (studentsAPI) in
+        ParseHandler().getData() { [weak self] (studentsAPI) in
             studentsAPI.forEach { (one) in
-                self.arrayOfStudents.append(Student(name: one.name))
+                self?.arrayOfStudents.append(Student(name: one.name))
             }
-            self.collectionView.reloadData()
+            self?.collectionView.reloadData()
 
             //сохранение в файл массива студентов (в виде массива словарей)
-            StorageHandler(storage: .fileStorage).handle(array: self.arrayOfStudents)
+            StorageHandler(storage: .fileStorage).handle(array: self?.arrayOfStudents ?? [])
 
             //сохранение через coreData
-            StorageHandler(storage: .coredataStorage).handle(array: self.arrayOfStudents)
+            StorageHandler(storage: .coredataStorage).handle(array: self?.arrayOfStudents ?? [])
             //вытягивание данных из coreData
             DatabaseManager().fetchCoreData()
         }
@@ -57,7 +57,6 @@ class CollectionViewController: UIViewController {
 extension CollectionViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //APIHandler.shared.arrayOfStudents.count
         arrayOfStudents.count
     }
     
@@ -68,8 +67,7 @@ extension CollectionViewController: UICollectionViewDataSource {
         cell.backgroundColor = .white
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.borderWidth = 2
-        
-        //cell.nameLabel.text = APIHandler.shared.arrayOfStudents[indexPath.row].name
+
         cell.nameLabel.text = arrayOfStudents[indexPath.row].name
         
         return cell

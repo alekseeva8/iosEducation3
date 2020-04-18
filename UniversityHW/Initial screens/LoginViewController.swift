@@ -39,7 +39,7 @@ class LoginViewController: UIViewController {
         }
     }
 
-    //MARK: - File Storage (достаем данные)
+    //MARK: - File Storage (достаем данные пользователя)
     func fetchInfoFromFileStorage() -> [String: String] {
         var decodedUserInfo: [String : String] = [:]
         let urls = FileManager.default.urls(for: .documentDirectory, in: .allDomainsMask)
