@@ -84,6 +84,25 @@
             </objects>
             <point key="canvasLocation" x="2332" y="115"/>
         </scene>
+        <!--Stack View Controller-->
+        <scene sceneID="FlS-Dm-Ce8">
+            <objects>
+                <viewController id="1oy-3t-SSp" customClass="StackViewController" customModule="UniversityHW" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hsM-bN-EK8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="BBV-t2-9gn"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ATR-0B-Sy0"/>
+                    <connections>
+                        <segue destination="T7n-ha-5Ft" kind="show" identifier="FromStackVCToWelcomeVC" id="kgq-fb-pen"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pgf-lu-ZLj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2297" y="887"/>
+        </scene>
         <!--Welcome View Controller-->
         <scene sceneID="616-9i-FIE">
             <objects>
@@ -269,6 +288,7 @@
                         <outlet property="registerButton" destination="OuE-UJ-imN" id="ID9-cy-Awi"/>
                         <outlet property="usernameTextField" destination="fLb-xn-Qe8" id="Vvt-Fw-PLC"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="RegistrVCToLoginVC" id="vBH-oR-ZgB"/>
+                        <segue destination="1oy-3t-SSp" kind="show" identifier="ToStackVC" id="vyK-xY-L8G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NQ0-Go-7mM" sceneMemberID="firstResponder"/>
@@ -280,4 +300,7 @@
         <image name="student-2" width="256" height="256"/>
         <image name="webinar" width="256" height="256"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="kgq-fb-pen"/>
+    </inferredMetricsTieBreakers>
 </document>

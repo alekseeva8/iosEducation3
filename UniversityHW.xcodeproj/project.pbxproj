@@ -26,6 +26,7 @@
 		F3726E18243EE8C100C37F00 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3726E17243EE8C100C37F00 /* Validator.swift */; };
 		F3726E1A243EEC3E00C37F00 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3726E19243EEC3E00C37F00 /* WelcomeViewController.swift */; };
 		F388CDC8244B6CA10046B2DD /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388CDC7244B6CA10046B2DD /* UserDefaults.swift */; };
+		F388CDCB244C3C230046B2DD /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388CDCA244C3C230046B2DD /* StackViewController.swift */; };
 		F3FB78D32445AED500F18942 /* DataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3FB78D12445AED500F18942 /* DataBase.xcdatamodeld */; };
 		F3FB78E12445BE1200F18942 /* FileStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FB78E02445BE1200F18942 /* FileStorageManager.swift */; };
 		F3FB78E42445C31A00F18942 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FB78E32445C31A00F18942 /* DatabaseManager.swift */; };
@@ -53,6 +54,7 @@
 		F3726E17243EE8C100C37F00 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		F3726E19243EEC3E00C37F00 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		F388CDC7244B6CA10046B2DD /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		F388CDCA244C3C230046B2DD /* StackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StackViewController.swift; path = UniversityHW/DataHandlers/Storage/Models/StackViewController.swift; sourceTree = SOURCE_ROOT; };
 		F3FB78D22445AED500F18942 /* DataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataBase.xcdatamodel; sourceTree = "<group>"; };
 		F3FB78E02445BE1200F18942 /* FileStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorageManager.swift; sourceTree = "<group>"; };
 		F3FB78E32445C31A00F18942 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			children = (
 				F3344FB8243F795600E411B4 /* RegistrationViewController.swift */,
 				F3726E07243DD7B000C37F00 /* LoginViewController.swift */,
+				F388CDCA244C3C230046B2DD /* StackViewController.swift */,
 				F3726E19243EEC3E00C37F00 /* WelcomeViewController.swift */,
 			);
 			path = "Initial screens";
@@ -126,7 +129,6 @@
 				F3344FD8244571D500E411B4 /* CollectionView */,
 				F3344FD024449FF300E411B4 /* ProfileViewController.swift */,
 				F3344FD92445720700E411B4 /* DataHandlers */,
-				F3344FCC24431FE800E411B4 /* Student.swift */,
 				F3726E17243EE8C100C37F00 /* Validator.swift */,
 				F3344FD22444A6BE00E411B4 /* ProfileManager.swift */,
 				F3726E0C243DD7B100C37F00 /* Assets.xcassets */,
@@ -136,6 +138,14 @@
 			path = UniversityHW;
 			sourceTree = "<group>";
 		};
+		F388CDC9244B73F60046B2DD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F3344FCC24431FE800E411B4 /* Student.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F3FB78E22445C2A000F18942 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +153,7 @@
 				F3FB78E02445BE1200F18942 /* FileStorageManager.swift */,
 				F3FB78E32445C31A00F18942 /* DatabaseManager.swift */,
 				F3FB78D12445AED500F18942 /* DataBase.xcdatamodeld */,
+				F388CDC9244B73F60046B2DD /* Models */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -235,6 +246,7 @@
 				F3FB78E42445C31A00F18942 /* DatabaseManager.swift in Sources */,
 				F3344FC12442F7AD00E411B4 /* CollectionViewController.swift in Sources */,
 				F3344FD124449FF300E411B4 /* ProfileViewController.swift in Sources */,
+				F388CDCB244C3C230046B2DD /* StackViewController.swift in Sources */,
 				F3726E1A243EEC3E00C37F00 /* WelcomeViewController.swift in Sources */,
 				F3726E06243DD7B000C37F00 /* SceneDelegate.swift in Sources */,
 			);

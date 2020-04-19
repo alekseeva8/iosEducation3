@@ -33,7 +33,8 @@ class RegistrationViewController: UIViewController {
             validator.isPasswordCorrect(password: password) == true {
             //сохранение данных пользователя
         FileStorageManager.userInfoInFileStorage(userInfo: userInfo)
-            performSegue(withIdentifier: "RegistrVCToLoginVC", sender: nil)
+            //performSegue(withIdentifier: "RegistrVCToLoginVC", sender: nil)
+            performSegue(withIdentifier: "ToStackVC", sender: nil)
         } else {
             validator.alertSending(self)
         }

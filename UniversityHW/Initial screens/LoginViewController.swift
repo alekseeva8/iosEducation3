@@ -33,7 +33,8 @@ class LoginViewController: UIViewController {
             //запись данных в userDefaults
             MyUserDefaults.userDefaults()
             print("userDefaults saved")
-            performSegue(withIdentifier: "fromLoginVCToWelcomeVC", sender: nil)
+            //performSegue(withIdentifier: "fromLoginVCToWelcomeVC", sender: nil)
+            performSegue(withIdentifier: "FromStackVCToWelcomeVC", sender: nil)
         }
     }
 }
