@@ -10,12 +10,13 @@ import Foundation
 
 class MyUserDefaults {
 
-    static func userDefaults() {
+    static func saveSignedValue() {
         let userDefaults = UserDefaults.standard
         //класть словари,массивы
         userDefaults.set("true", forKey: "signed")
-        if let value = userDefaults.value(forKey: "signed") {
-            print(value)
-        }
+    }
+    
+    static func saveInterfaceStyleValue(number: Int) { UserDefaults.standard.set(number, forKey: "style")
+        print("Interface Style saved to UserDefaults")
     }
 }

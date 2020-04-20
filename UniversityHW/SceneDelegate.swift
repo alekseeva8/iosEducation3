@@ -18,6 +18,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
 
+        //загрузка стиля интерфейса, сохраненного пользователем
+        let styleSavedByUser = UserDefaults.standard.value(forKey: "style") as! Int
+        switch styleSavedByUser {
+        case 0:
+        window?.overrideUserInterfaceStyle = .unspecified
+        case 1:
+         window?.overrideUserInterfaceStyle = .light
+        case 2:
+         window?.overrideUserInterfaceStyle = .dark
+        default:
+            break
+        }
+
+        // загрузка соответствующего экрана
         let rootNavigationController = UINavigationController()
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

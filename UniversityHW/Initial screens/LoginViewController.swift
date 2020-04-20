@@ -31,8 +31,8 @@ class LoginViewController: UIViewController {
 
         if username == decodedUsername && password == decodedPassword {
             //запись данных в userDefaults
-            MyUserDefaults.userDefaults()
-            print("userDefaults saved")
+            MyUserDefaults.saveSignedValue()
+            print("Signed value saved to UserDefaults")
             //performSegue(withIdentifier: "fromLoginVCToWelcomeVC", sender: nil)
             performSegue(withIdentifier: "FromStackVCToWelcomeVC", sender: nil)
         }

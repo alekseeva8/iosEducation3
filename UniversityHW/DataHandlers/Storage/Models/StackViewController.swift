@@ -108,7 +108,7 @@ class StackViewController: UIViewController {
 
         if username == decodedUsername && password == decodedPassword {
             //запись данных в userDefaults
-            MyUserDefaults.userDefaults()
+            MyUserDefaults.saveSignedValue()
             print("userDefaults saved")
             //performSegue(withIdentifier: "fromLoginVCToWelcomeVC", sender: nil)
             performSegue(withIdentifier: "FromStackVCToWelcomeVC", sender: nil)
