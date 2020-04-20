@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
 
         //загрузка стиля интерфейса, сохраненного пользователем
-        let styleSavedByUser = UserDefaults.standard.value(forKey: "style") as! Int
+        if let styleSavedByUser = UserDefaults.standard.value(forKey: "style") as? Int {
         switch styleSavedByUser {
         case 0:
         window?.overrideUserInterfaceStyle = .unspecified
@@ -29,6 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
          window?.overrideUserInterfaceStyle = .dark
         default:
             break
+        }
         }
 
         // загрузка соответствующего экрана
