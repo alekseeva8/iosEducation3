@@ -18,6 +18,7 @@ class RegistrationViewController: UIViewController {
         view.backgroundColor = UIColor(named: "BackgroundColor")
         registerButton.layer.cornerRadius = 20
         //self.usernameTextField.becomeFirstResponder()
+        passwordTextField.delegate = self
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
@@ -39,5 +40,13 @@ class RegistrationViewController: UIViewController {
         } else {
             validator.alertSending(self)
         }
+    }
+}
+
+extension RegistrationViewController: UITextFieldDelegate {
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        passwordTextField.resignFirstResponder()
+        return true
     }
 }

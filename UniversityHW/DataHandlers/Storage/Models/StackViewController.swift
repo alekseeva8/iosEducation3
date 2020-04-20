@@ -20,7 +20,6 @@ class StackViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "BackgroundColor")
-
         view.addSubview(mainStackView)
 
         setLabel()
@@ -31,6 +30,8 @@ class StackViewController: UIViewController {
         mainStackView.addArrangedSubview(label)
         mainStackView.addArrangedSubview(subStackView)
         mainStackView.addArrangedSubview(button)
+
+        passwordTextField.delegate = self
     }
 
 
@@ -51,9 +52,6 @@ class StackViewController: UIViewController {
         //the stack view pins its content to the relevant margin instead of its edge.
         mainStackView.isLayoutMarginsRelativeArrangement = true
         mainStackView.layoutMargins = insets
-
-        //subStackView.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor, constant:  20).isActive = true
-        //subStackView.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor, constant:  -20).isActive = true
     }
 
 
@@ -113,5 +111,13 @@ class StackViewController: UIViewController {
             print("Signed value saved to UserDefaults")
             performSegue(withIdentifier: "FromStackVCToWelcomeVC", sender: nil)
     }
+    }
+}
+
+extension StackViewController: UITextFieldDelegate {
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        passwordTextField.resignFirstResponder()
+        return true
     }
 }
