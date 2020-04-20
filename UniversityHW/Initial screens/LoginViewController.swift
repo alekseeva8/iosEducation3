@@ -34,7 +34,6 @@ class LoginViewController: UIViewController {
             MyUserDefaults.saveSignedValue()
             print("Signed value saved to UserDefaults")
             //performSegue(withIdentifier: "fromLoginVCToWelcomeVC", sender: nil)
-            performSegue(withIdentifier: "FromStackVCToWelcomeVC", sender: nil)
         }
     }
 }

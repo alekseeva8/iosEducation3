@@ -12,11 +12,11 @@
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="UniversityHW" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="center" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="Nw4-p6-OJW">
-                                <rect key="frame" x="20" y="186.5" width="335" height="97"/>
+                                <rect key="frame" x="20" y="196.5" width="335" height="97"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oYT-9j-6m1">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="34"/>
@@ -38,7 +38,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSv-uS-243">
-                                <rect key="frame" x="87.5" y="303.5" width="200" height="40"/>
+                                <rect key="frame" x="87.5" y="313.5" width="200" height="40"/>
                                 <color key="backgroundColor" red="0.96130555870000001" green="0.90916923549999995" blue="0.41556767369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="PQu-jg-f2m"/>
@@ -52,7 +52,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in to your Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWk-br-aLH" userLabel="Label">
-                                <rect key="frame" x="67.5" y="99.5" width="240.5" height="59"/>
+                                <rect key="frame" x="67.5" y="99.5" width="240.5" height="69"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -77,7 +77,6 @@
                         <outlet property="loginButton" destination="fSv-uS-243" id="36H-t0-pWb"/>
                         <outlet property="passwordTextField" destination="U9W-T6-NoE" id="vxk-kb-saw"/>
                         <outlet property="usernameTextField" destination="oYT-9j-6m1" id="1vh-Pi-Us9"/>
-                        <segue destination="T7n-ha-5Ft" kind="show" identifier="fromLoginVCToWelcomeVC" id="jqZ-dD-q9L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -347,7 +346,6 @@
                         <outlet property="passwordTextField" destination="nrj-Pd-BTK" id="yCI-r2-VdI"/>
                         <outlet property="registerButton" destination="OuE-UJ-imN" id="ID9-cy-Awi"/>
                         <outlet property="usernameTextField" destination="fLb-xn-Qe8" id="Vvt-Fw-PLC"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="RegistrVCToLoginVC" id="vBH-oR-ZgB"/>
                         <segue destination="1oy-3t-SSp" kind="show" identifier="ToStackVC" id="vyK-xY-L8G"/>
                     </connections>
                 </viewController>
@@ -360,7 +358,4 @@
         <image name="student-2" width="256" height="256"/>
         <image name="webinar" width="256" height="256"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="kgq-fb-pen"/>
-    </inferredMetricsTieBreakers>
 </document>

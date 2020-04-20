@@ -17,6 +17,7 @@ class RegistrationViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "BackgroundColor")
         registerButton.layer.cornerRadius = 20
+        //self.usernameTextField.becomeFirstResponder()
     }
     
     @IBAction func buttonPressed(_ sender: Any) {

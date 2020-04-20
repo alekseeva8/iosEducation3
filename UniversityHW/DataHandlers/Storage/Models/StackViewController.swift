@@ -42,20 +42,18 @@ class StackViewController: UIViewController {
         mainStackView.spacing = 30
 
         mainStackView.translatesAutoresizingMaskIntoConstraints = false
-        mainStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        mainStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         mainStackView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         mainStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
 
-        let insets = UIEdgeInsets(top: 50, left: 0, bottom: 90, right: 0)
+        let insets = UIEdgeInsets(top: 40, left: 0, bottom: 80, right: 0)
         //the stack view pins its content to the relevant margin instead of its edge.
         mainStackView.isLayoutMarginsRelativeArrangement = true
         mainStackView.layoutMargins = insets
 
-        subStackView.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor, constant:  20).isActive = true
-        subStackView.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor, constant:  -20).isActive = true
+        //subStackView.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor, constant:  20).isActive = true
+        //subStackView.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor, constant:  -20).isActive = true
     }
 
 
@@ -68,16 +66,19 @@ class StackViewController: UIViewController {
 
     //MARK: - SubStackView
     func setSubStackView() {
-        usernameTextField.textColor = .black
+        usernameTextField.textColor = UIColor(named: "TextFieldColor")
         usernameTextField.borderStyle = .roundedRect
         usernameTextField.placeholder = "Username"
+        usernameTextField.heightAnchor.constraint(equalToConstant: 34).isActive = true
 
-        passwordTextField.textColor = .black
+        passwordTextField.textColor = UIColor(named: "TextFieldColor")
         passwordTextField.borderStyle = .roundedRect
         passwordTextField.placeholder = "Password"
+        passwordTextField.heightAnchor.constraint(equalToConstant: 34).isActive = true
 
         subStackView.addArrangedSubview(usernameTextField)
         subStackView.addArrangedSubview(passwordTextField)
+        subStackView.widthAnchor.constraint(equalToConstant: 335).isActive = true
         subStackView.axis = .vertical
         subStackView.alignment = .fill
         subStackView.distribution = .fill
@@ -109,8 +110,7 @@ class StackViewController: UIViewController {
         if username == decodedUsername && password == decodedPassword {
             //запись данных в userDefaults
             MyUserDefaults.saveSignedValue()
-            print("userDefaults saved")
-            //performSegue(withIdentifier: "fromLoginVCToWelcomeVC", sender: nil)
+            print("Signed value saved to UserDefaults")
             performSegue(withIdentifier: "FromStackVCToWelcomeVC", sender: nil)
     }
     }
