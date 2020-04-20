@@ -103,6 +103,47 @@
             </objects>
             <point key="canvasLocation" x="2297" y="887"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="ogc-qc-rJl">
+            <objects>
+                <viewController id="2bj-av-QXQ" customClass="SettingsViewController" customModule="UniversityHW" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mS7-kG-LtU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JRV-q0-O8x" userLabel="SegmentedControl">
+                                <rect key="frame" x="42" y="130" width="255" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Auto"/>
+                                    <segment title="Light"/>
+                                    <segment title="Dark"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlPressed:" destination="2bj-av-QXQ" eventType="valueChanged" id="hyk-9g-gxA"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose interface style" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIp-A1-Ko8" userLabel="Label">
+                                <rect key="frame" x="42" y="81" width="194" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="SaU-it-e5B"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wlu-nn-wDp"/>
+                    <connections>
+                        <outlet property="label" destination="IIp-A1-Ko8" id="M5c-Pl-VGr"/>
+                        <outlet property="segmentedControll" destination="JRV-q0-O8x" id="i76-pj-I4o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R8o-gY-bmE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3074" y="887"/>
+        </scene>
         <!--Welcome View Controller-->
         <scene sceneID="616-9i-FIE">
             <objects>
@@ -151,6 +192,7 @@
                         <outlet property="label" destination="YC1-xb-H6l" id="hIV-Ar-x9d"/>
                         <outlet property="studentsListButton" destination="MGm-NM-x2o" id="gsq-5i-emn"/>
                         <segue destination="cJu-wV-2YT" kind="show" identifier="fromWelcomeVCToCollectionVC" id="5dg-Qn-vfN"/>
+                        <segue destination="2bj-av-QXQ" kind="show" identifier="toSettingsVC" id="FX5-cO-DIv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YT5-HI-Dfv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
