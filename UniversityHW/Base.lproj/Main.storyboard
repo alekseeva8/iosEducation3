@@ -12,11 +12,11 @@
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="UniversityHW" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="center" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="Nw4-p6-OJW">
-                                <rect key="frame" x="20" y="186.5" width="335" height="97"/>
+                                <rect key="frame" x="20" y="196.5" width="335" height="97"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oYT-9j-6m1">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="34"/>
@@ -38,7 +38,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSv-uS-243">
-                                <rect key="frame" x="87.5" y="303.5" width="200" height="40"/>
+                                <rect key="frame" x="87.5" y="313.5" width="200" height="40"/>
                                 <color key="backgroundColor" red="0.96130555870000001" green="0.90916923549999995" blue="0.41556767369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="PQu-jg-f2m"/>
@@ -52,7 +52,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in to your Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWk-br-aLH" userLabel="Label">
-                                <rect key="frame" x="67.5" y="99.5" width="240.5" height="59"/>
+                                <rect key="frame" x="67.5" y="99.5" width="240.5" height="69"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -77,12 +77,89 @@
                         <outlet property="loginButton" destination="fSv-uS-243" id="36H-t0-pWb"/>
                         <outlet property="passwordTextField" destination="U9W-T6-NoE" id="vxk-kb-saw"/>
                         <outlet property="usernameTextField" destination="oYT-9j-6m1" id="1vh-Pi-Us9"/>
-                        <segue destination="T7n-ha-5Ft" kind="show" identifier="fromLoginVCToWelcomeVC" id="jqZ-dD-q9L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2332" y="115"/>
+        </scene>
+        <!--Stack View Controller-->
+        <scene sceneID="FlS-Dm-Ce8">
+            <objects>
+                <viewController id="1oy-3t-SSp" customClass="StackViewController" customModule="UniversityHW" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hsM-bN-EK8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="BBV-t2-9gn"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ATR-0B-Sy0"/>
+                    <connections>
+                        <segue destination="T7n-ha-5Ft" kind="show" identifier="FromStackVCToWelcomeVC" id="kgq-fb-pen"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pgf-lu-ZLj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2297" y="887"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="ogc-qc-rJl">
+            <objects>
+                <viewController id="2bj-av-QXQ" customClass="SettingsViewController" customModule="UniversityHW" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mS7-kG-LtU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="Xln-dL-BW6">
+                                <rect key="frame" x="81.5" y="85" width="212" height="177.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose interface style" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIp-A1-Ko8" userLabel="Label">
+                                        <rect key="frame" x="0.0" y="0.0" width="212" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JRV-q0-O8x" userLabel="SegmentedControl">
+                                        <rect key="frame" x="0.0" y="68.5" width="212" height="32"/>
+                                        <segments>
+                                            <segment title="Auto"/>
+                                            <segment title="Light"/>
+                                            <segment title="Dark"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="segmentedControlPressed:" destination="2bj-av-QXQ" eventType="valueChanged" id="hyk-9g-gxA"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hfs-i7-NQe">
+                                        <rect key="frame" x="0.0" y="141.5" width="212" height="36"/>
+                                        <color key="backgroundColor" red="0.96130555870000001" green="0.90916923549999995" blue="0.41556767369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="SAVE">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveButtonTapped:" destination="2bj-av-QXQ" eventType="touchUpInside" id="nzF-7z-lf5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Xln-dL-BW6" firstAttribute="top" secondItem="SaU-it-e5B" secondAttribute="top" constant="85" id="p2d-yT-0c3"/>
+                            <constraint firstItem="Xln-dL-BW6" firstAttribute="centerX" secondItem="mS7-kG-LtU" secondAttribute="centerX" id="qEO-vq-MnI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SaU-it-e5B"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wlu-nn-wDp"/>
+                    <connections>
+                        <outlet property="label" destination="IIp-A1-Ko8" id="M5c-Pl-VGr"/>
+                        <outlet property="segmentedControll" destination="JRV-q0-O8x" id="i76-pj-I4o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R8o-gY-bmE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3074" y="887"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="616-9i-FIE">
@@ -132,6 +209,7 @@
                         <outlet property="label" destination="YC1-xb-H6l" id="hIV-Ar-x9d"/>
                         <outlet property="studentsListButton" destination="MGm-NM-x2o" id="gsq-5i-emn"/>
                         <segue destination="cJu-wV-2YT" kind="show" identifier="fromWelcomeVCToCollectionVC" id="5dg-Qn-vfN"/>
+                        <segue destination="2bj-av-QXQ" kind="show" identifier="toSettingsVC" id="FX5-cO-DIv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YT5-HI-Dfv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -268,7 +346,7 @@
                         <outlet property="passwordTextField" destination="nrj-Pd-BTK" id="yCI-r2-VdI"/>
                         <outlet property="registerButton" destination="OuE-UJ-imN" id="ID9-cy-Awi"/>
                         <outlet property="usernameTextField" destination="fLb-xn-Qe8" id="Vvt-Fw-PLC"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="RegistrVCToLoginVC" id="vBH-oR-ZgB"/>
+                        <segue destination="1oy-3t-SSp" kind="show" identifier="ToStackVC" id="vyK-xY-L8G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NQ0-Go-7mM" sceneMemberID="firstResponder"/>

@@ -10,7 +10,7 @@ import Foundation
 
 class APIHandler {
     
-     func requestDataToAPI(urlString: String, completion: @escaping (Data) -> Void) {
+     static func requestDataToAPI(urlString: String, completion: @escaping (Data) -> Void) {
         let session = URLSession.shared
         guard let url = URL(string: urlString) else {return}
         let task = session.dataTask(with: url) {(data, response, error) in
