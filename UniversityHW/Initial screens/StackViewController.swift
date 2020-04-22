@@ -10,7 +10,7 @@ import UIKit
 
 class StackViewController: UIViewController {
 
-     var mainStackView = UIStackView(arrangedSubviews: [])
+    var mainStackView = UIStackView(arrangedSubviews: [])
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,4 +36,5 @@ class StackViewController: UIViewController {
         mainStackView.isLayoutMarginsRelativeArrangement = true
         mainStackView.layoutMargins = insets
     }
+
 }

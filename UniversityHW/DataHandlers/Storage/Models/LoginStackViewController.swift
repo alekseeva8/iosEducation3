@@ -19,15 +19,19 @@ class LoginStackViewController: StackViewController {
      override func viewDidLoad() {
          super.viewDidLoad()
          view.backgroundColor = UIColor(named: "BackgroundColor")
+        mainStackView = UIStackView(arrangedSubviews: [label, subStackView, button])
 
-         mainStackView = UIStackView(arrangedSubviews: [label, subStackView, button])
-         view.addSubview(mainStackView)
+        view.addSubview(mainStackView)
 
-         setLabel()
-         setSubStackView()
-         setButton()
          setMainStackView()
      }
+
+    override func setMainStackView() {
+        super.setMainStackView()
+        setLabel()
+        setSubStackView()
+        setButton()
+    }
 
 
      //MARK: - Label
