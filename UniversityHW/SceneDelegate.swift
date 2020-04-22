@@ -46,7 +46,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         else {
         // open firstVC
-        initialVC = storyboard.instantiateViewController(withIdentifier: "RegistrVC") as! RegistrationViewController
+        //initialVC = storyboard.instantiateViewController(withIdentifier: "RegistrVC") as! RegistrationViewController
+        initialVC = storyboard.instantiateViewController(withIdentifier: "RegistrStackVC")
         }
 
         self.window?.rootViewController = rootNavigationController
