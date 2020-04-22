@@ -11,6 +11,7 @@ import UIKit
 class StackViewController: UIViewController {
 
     var mainStackView = UIStackView(arrangedSubviews: [])
+     var subStackView = UIStackView(arrangedSubviews: [])
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,40 @@ class StackViewController: UIViewController {
         //the stack view pins its content to the relevant margin instead of its edge.
         mainStackView.isLayoutMarginsRelativeArrangement = true
         mainStackView.layoutMargins = insets
+    }
+
+    //MARK: - Label
+    func setLabel(label: UILabel, text: String) {
+
+        label.text = text
+        label.font = UIFont.systemFont(ofSize: 25)
+    }
+
+    //MARK: - Button
+    func setButton(button: UIButton, title: String) {
+         button.widthAnchor.constraint(equalToConstant: 200).isActive = true
+         button.layer.cornerRadius = 20
+         button.backgroundColor = .yellow
+         button.setTitle(title, for: .normal)
+         button.setTitleColor(.black, for: .normal)
+         button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+     }
+
+    //MARK: - SubStackView
+    func setSubStackView(arrayOftextFieldPlaceholders: [String]) {
+        arrayOftextFieldPlaceholders.forEach { (one) in
+            let textField = UITextField()
+            textField.textColor = UIColor(named: "TextFieldColor")
+            textField.borderStyle = .roundedRect
+            textField.placeholder = one
+            textField.heightAnchor.constraint(equalToConstant: 34).isActive = true
+            subStackView.addArrangedSubview(textField)
+        }
+        subStackView.widthAnchor.constraint(equalToConstant: 335).isActive = true
+        subStackView.axis = .vertical
+        subStackView.alignment = .fill
+        subStackView.distribution = .fill
+        subStackView.spacing = 20
     }
 
 }
