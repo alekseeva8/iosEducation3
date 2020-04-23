@@ -55,12 +55,13 @@ class StackViewController: UIViewController {
 
     //MARK: - SubStackView
 
-    func setSubStackView(array: [UITextField]) {
-        array.forEach { (one) in
-            one.textColor = UIColor(named: "TextFieldColor")
-            one.borderStyle = .roundedRect
-            one.heightAnchor.constraint(equalToConstant: 34).isActive = true
-            subStackView.addArrangedSubview(one)
+    func setSubStackView(array: [UITextField], arrayOfPlaceholders: [String]) {
+        for (index, item) in array.enumerated() {
+            item.textColor = UIColor(named: "TextFieldColor")
+            item.borderStyle = .roundedRect
+            item.placeholder = arrayOfPlaceholders[index]
+            item.heightAnchor.constraint(equalToConstant: 34).isActive = true
+            subStackView.addArrangedSubview(item)
         }
         subStackView.widthAnchor.constraint(equalToConstant: 335).isActive = true
         subStackView.axis = .vertical
@@ -69,3 +70,4 @@ class StackViewController: UIViewController {
         subStackView.spacing = 20
     }
 }
+

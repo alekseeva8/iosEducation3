@@ -31,10 +31,8 @@ class LoginStackViewController: StackViewController {
         super.setMainStackView()
         setLabel(label: label, text: "Login to your account")
 
-        usernameTextField.placeholder = "Username"
-        passwordTextField.placeholder = "Password"
         let arrayOfTextFields = [usernameTextField, passwordTextField]
-        setSubStackView(array: arrayOfTextFields)
+        setSubStackView(array: arrayOfTextFields, arrayOfPlaceholders: ["Username", "Password"])
 
         setButton(button: button, title: "LOG IN")
     }

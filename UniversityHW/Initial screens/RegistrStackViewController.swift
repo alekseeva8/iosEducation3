@@ -33,11 +33,8 @@ class RegistrStackViewController: StackViewController {
         super.setMainStackView()
         setLabel(label: label, text: "Registration")
         
-        usernameTextField.placeholder = "Username"
-        passwordTextField.placeholder = "Password"
-        repeatPasswordTextField.placeholder = "Repeat password"
         let arrayOfTextFields = [usernameTextField, passwordTextField, repeatPasswordTextField]
-        setSubStackView(array: arrayOfTextFields)
+        setSubStackView(array: arrayOfTextFields, arrayOfPlaceholders: ["Username", "Password", "Repeat password"])
         
         setButton(button: button, title: "Register")
     }
