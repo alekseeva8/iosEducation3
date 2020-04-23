@@ -10,12 +10,10 @@ import UIKit
 
 class RegistrStackViewController: StackViewController {
 
-   //let mainStackView = UIStackView(arrangedSubviews: [])
     let label = UILabel()
     let usernameTextField = UITextField()
     let passwordTextField = UITextField()
-    //let repeatPasswordTextField = UITextField()
-    //let subStackView = UIStackView(arrangedSubviews: [])
+    let repeatPasswordTextField = UITextField()
     let button = UIButton()
 
     override func viewDidLoad() {
@@ -32,7 +30,13 @@ class RegistrStackViewController: StackViewController {
     override func setMainStackView() {
         super.setMainStackView()
         setLabel(label: label, text: "Registration")
-        setSubStackView(arrayOftextFieldPlaceholders: ["Username", "Password", "Repeat password"])
+
+        usernameTextField.placeholder = "Username"
+        passwordTextField.placeholder = "Password"
+        repeatPasswordTextField.placeholder = "Repeat password"
+        let arrayOfTextFields = [usernameTextField, passwordTextField, repeatPasswordTextField]
+        setSubStackView(array: arrayOfTextFields)
+        
         setButton(button: button, title: "Register")
     }
 

@@ -27,7 +27,12 @@ class LoginStackViewController: StackViewController {
     override func setMainStackView() {
         super.setMainStackView()
         setLabel(label: label, text: "Login to your account")
-        setSubStackView(arrayOftextFieldPlaceholders: ["Username", "Password"])
+
+        usernameTextField.placeholder = "Username"
+        passwordTextField.placeholder = "Password"
+        let arrayOfTextFields = [usernameTextField, passwordTextField]
+        setSubStackView(array: arrayOfTextFields)
+
         setButton(button: button, title: "LOG IN")
     }
 
@@ -39,23 +44,22 @@ class LoginStackViewController: StackViewController {
 
      //MARK: - кнопка перехода к след экрану
     @objc func buttonPressed(sender: UIButton) {
-        performSegue(withIdentifier: "FromStackVCToWelcomeVC", sender: nil)
 
-//         let username = usernameTextField.text ?? ""
-//         let password = passwordTextField.text ?? ""
-//
-//         //выполнение записи данных пользователя
-//         let decodedUserInfo = FileStorageManager.fetchInfoFromFileStorage()
-//         print(decodedUserInfo["username"] ?? "")
-//         let decodedUsername = decodedUserInfo["username"] ?? ""
-//         let decodedPassword = decodedUserInfo["password"] ?? ""
-//
-//         if username == decodedUsername && password == decodedPassword {
-//             //запись данных в userDefaults
-//             MyUserDefaults.saveSignedValue()
-//             print("Signed value saved to UserDefaults")
-//             performSegue(withIdentifier: "FromStackVCToWelcomeVC", sender: nil)
-//     }
+         let username = usernameTextField.text ?? ""
+         let password = passwordTextField.text ?? ""
+
+         //выполнение записи данных пользователя
+         let decodedUserInfo = FileStorageManager.fetchInfoFromFileStorage()
+         print(decodedUserInfo["username"] ?? "")
+         let decodedUsername = decodedUserInfo["username"] ?? ""
+         let decodedPassword = decodedUserInfo["password"] ?? ""
+
+         if username == decodedUsername && password == decodedPassword {
+             //запись данных в userDefaults
+             MyUserDefaults.saveSignedValue()
+             print("Signed value saved to UserDefaults")
+             performSegue(withIdentifier: "FromStackVCToWelcomeVC", sender: nil)
+     }
      }
 
 }

@@ -77,11 +77,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F313E59024517C7000575435 /* unused */ = {
+			isa = PBXGroup;
+			children = (
+				F3726E07243DD7B000C37F00 /* LoginViewController.swift */,
+				F3344FB8243F795600E411B4 /* RegistrationViewController.swift */,
+			);
+			path = unused;
+			sourceTree = "<group>";
+		};
 		F3344FD72445717400E411B4 /* Initial screens */ = {
 			isa = PBXGroup;
 			children = (
-				F3344FB8243F795600E411B4 /* RegistrationViewController.swift */,
-				F3726E07243DD7B000C37F00 /* LoginViewController.swift */,
+				F313E59024517C7000575435 /* unused */,
 				F388CDDA24509F1B0046B2DD /* StackViewController.swift */,
 				F388CDD8245098F90046B2DD /* RegistrStackViewController.swift */,
 				F388CDCA244C3C230046B2DD /* LoginStackViewController.swift */,

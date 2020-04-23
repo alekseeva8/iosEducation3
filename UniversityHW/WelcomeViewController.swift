@@ -20,6 +20,7 @@ class WelcomeViewController: UIViewController {
         view.backgroundColor = UIColor(named: "BackgroundColor")
         studentsListButton.layer.cornerRadius = 10
 
+        navigationItem.hidesBackButton = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(goToSettingsVC))
     }
 

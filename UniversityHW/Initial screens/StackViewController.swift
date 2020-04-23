@@ -24,7 +24,7 @@ class StackViewController: UIViewController {
         mainStackView.axis = .vertical
         mainStackView.alignment = .center
         mainStackView.distribution = .equalCentering
-        mainStackView.spacing = 30
+        mainStackView.spacing = 15
 
         mainStackView.translatesAutoresizingMaskIntoConstraints = false
         mainStackView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -32,7 +32,7 @@ class StackViewController: UIViewController {
         mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
 
-        let insets = UIEdgeInsets(top: 40, left: 0, bottom: 80, right: 0)
+        let insets = UIEdgeInsets(top: 40, left: 0, bottom: 60, right: 0)
         //the stack view pins its content to the relevant margin instead of its edge.
         mainStackView.isLayoutMarginsRelativeArrangement = true
         mainStackView.layoutMargins = insets
@@ -56,14 +56,13 @@ class StackViewController: UIViewController {
      }
 
     //MARK: - SubStackView
-    func setSubStackView(arrayOftextFieldPlaceholders: [String]) {
-        arrayOftextFieldPlaceholders.forEach { (one) in
-            let textField = UITextField()
-            textField.textColor = UIColor(named: "TextFieldColor")
-            textField.borderStyle = .roundedRect
-            textField.placeholder = one
-            textField.heightAnchor.constraint(equalToConstant: 34).isActive = true
-            subStackView.addArrangedSubview(textField)
+
+    func setSubStackView(array: [UITextField]) {
+        array.forEach { (one) in
+            one.textColor = UIColor(named: "TextFieldColor")
+            one.borderStyle = .roundedRect
+            one.heightAnchor.constraint(equalToConstant: 34).isActive = true
+            subStackView.addArrangedSubview(one)
         }
         subStackView.widthAnchor.constraint(equalToConstant: 335).isActive = true
         subStackView.axis = .vertical
@@ -71,5 +70,4 @@ class StackViewController: UIViewController {
         subStackView.distribution = .fill
         subStackView.spacing = 20
     }
-
 }
