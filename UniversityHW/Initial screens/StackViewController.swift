@@ -11,11 +11,10 @@ import UIKit
 class StackViewController: UIViewController {
 
     var mainStackView = UIStackView(arrangedSubviews: [])
-     var subStackView = UIStackView(arrangedSubviews: [])
+    var subStackView = UIStackView(arrangedSubviews: [])
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     //MARK: - MainStackView
@@ -40,20 +39,19 @@ class StackViewController: UIViewController {
 
     //MARK: - Label
     func setLabel(label: UILabel, text: String) {
-
         label.text = text
         label.font = UIFont.systemFont(ofSize: 25)
     }
 
     //MARK: - Button
     func setButton(button: UIButton, title: String) {
-         button.widthAnchor.constraint(equalToConstant: 200).isActive = true
-         button.layer.cornerRadius = 20
-         button.backgroundColor = .yellow
-         button.setTitle(title, for: .normal)
-         button.setTitleColor(.black, for: .normal)
-         button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
-     }
+        button.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        button.layer.cornerRadius = 20
+        button.backgroundColor = .yellow
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+    }
 
     //MARK: - SubStackView
 
