@@ -81,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2332" y="115"/>
+            <point key="canvasLocation" x="2268" y="-571"/>
         </scene>
         <!--Registr Stack View Controller-->
         <scene sceneID="VFY-co-0Wt">
@@ -99,7 +99,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZWP-ci-4Aa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1609" y="887"/>
+            <point key="canvasLocation" x="1550" y="115"/>
         </scene>
         <!--Login Stack View Controller-->
         <scene sceneID="FlS-Dm-Ce8">
@@ -118,7 +118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgf-lu-ZLj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2297" y="887"/>
+            <point key="canvasLocation" x="2289" y="115"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="ogc-qc-rJl">
@@ -364,19 +364,15 @@
                         <outlet property="passwordTextField" destination="nrj-Pd-BTK" id="yCI-r2-VdI"/>
                         <outlet property="registerButton" destination="OuE-UJ-imN" id="ID9-cy-Awi"/>
                         <outlet property="usernameTextField" destination="fLb-xn-Qe8" id="Vvt-Fw-PLC"/>
-                        <segue destination="1oy-3t-SSp" kind="show" identifier="ToStackVC" id="vyK-xY-L8G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NQ0-Go-7mM" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1609" y="115"/>
+            <point key="canvasLocation" x="1550" y="-572"/>
         </scene>
     </scenes>
     <resources>
         <image name="student-2" width="256" height="256"/>
         <image name="webinar" width="256" height="256"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="eXG-h6-Aht"/>
-    </inferredMetricsTieBreakers>
 </document>
