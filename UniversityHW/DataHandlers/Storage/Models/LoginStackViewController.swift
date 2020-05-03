@@ -10,84 +10,53 @@ import UIKit
 
 class LoginStackViewController: StackViewController {
 
-     let label = UILabel()
-     let usernameTextField = UITextField()
-     let passwordTextField = UITextField()
-     let subStackView = UIStackView(arrangedSubviews: [])
-     let button = UIButton()
+    let label = UILabel()
+    let usernameTextField = UITextField()
+    let passwordTextField = UITextField()
+    let button = UIButton()
 
-     override func viewDidLoad() {
-         super.viewDidLoad()
-         view.backgroundColor = UIColor(named: "BackgroundColor")
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = UIColor(named: "BackgroundColor")
 
-         mainStackView = UIStackView(arrangedSubviews: [label, subStackView, button])
-         view.addSubview(mainStackView)
+        mainStackView.insertArrangedSubview(label, at: 0)
+        mainStackView.addArrangedSubview(button)
+        setMainStackViewLayout()
 
-         setLabel()
-         setSubStackView()
-         setButton()
-         setMainStackView()
-     }
+        setLabel(label: label, text: "Login to your account")
 
-
-     //MARK: - Label
-     func setLabel() {
-         label.text = "Login to your account"
-         label.font = UIFont.systemFont(ofSize: 25)
-     }
+        let arrayOfTextFields = [usernameTextField, passwordTextField]
+        setSubStackView(array: arrayOfTextFields, arrayOfPlaceholders: ["Username", "Password"])
+        subStackViewLayout()
+        
+        setButton(button: button, title: "LOG IN")
+    }
 
 
-     //MARK: - SubStackView
-     func setSubStackView() {
-         usernameTextField.textColor = UIColor(named: "TextFieldColor")
-         usernameTextField.borderStyle = .roundedRect
-         usernameTextField.placeholder = "Username"
-         usernameTextField.heightAnchor.constraint(equalToConstant: 34).isActive = true
+    //MARK: - Button
+    override func setButton(button: UIButton, title: String) {
+        super.setButton(button: button, title: title)
+        button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+    }
 
-         passwordTextField.textColor = UIColor(named: "TextFieldColor")
-         passwordTextField.borderStyle = .roundedRect
-         passwordTextField.placeholder = "Password"
-         passwordTextField.heightAnchor.constraint(equalToConstant: 34).isActive = true
+    //MARK: - кнопка перехода к след экрану
+    @objc func buttonPressed(sender: UIButton) {
 
-         subStackView.addArrangedSubview(usernameTextField)
-         subStackView.addArrangedSubview(passwordTextField)
-         subStackView.widthAnchor.constraint(equalToConstant: 335).isActive = true
-         subStackView.axis = .vertical
-         subStackView.alignment = .fill
-         subStackView.distribution = .fill
-         subStackView.spacing = 20
-     }
+        let username = usernameTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
 
+        //выполнение записи данных пользователя
+        let decodedUserInfo = FileStorageManager.fetchInfoFromFileStorage()
+        print(decodedUserInfo["username"] ?? "")
+        let decodedUsername = decodedUserInfo["username"] ?? ""
+        let decodedPassword = decodedUserInfo["password"] ?? ""
 
-     //MARK: - Button
-     func setButton() {
-         button.widthAnchor.constraint(equalToConstant: 200).isActive = true
-         button.layer.cornerRadius = 20
-         button.backgroundColor = .yellow
-         button.setTitle("LOG IN", for: .normal)
-         button.setTitleColor(.black, for: .normal)
-         button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
-         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-     }
-
-     //MARK: - кнопка перехода к след экрану
-    @objc func buttonTapped(sender: UIButton) {
-         let username = usernameTextField.text ?? ""
-         let password = passwordTextField.text ?? ""
-
-         //выполнение записи данных пользователя
-         let decodedUserInfo = FileStorageManager.fetchInfoFromFileStorage()
-         print(decodedUserInfo["username"] ?? "")
-         let decodedUsername = decodedUserInfo["username"] ?? ""
-         let decodedPassword = decodedUserInfo["password"] ?? ""
-
-         if username == decodedUsername && password == decodedPassword {
-             //запись данных в userDefaults
-             MyUserDefaults.saveSignedValue()
-             print("Signed value saved to UserDefaults")
-             performSegue(withIdentifier: "FromStackVCToWelcomeVC", sender: nil)
-     }
-     }
-
+        if username == decodedUsername && password == decodedPassword {
+            //запись данных в userDefaults
+            MyUserDefaults.saveSignedValue()
+            print("Signed value saved to UserDefaults")
+            performSegue(withIdentifier: "FromStackVCToWelcomeVC", sender: nil)
+        }
+    }
 }
 
