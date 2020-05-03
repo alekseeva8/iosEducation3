@@ -13,7 +13,7 @@ class CollectionViewController: UIViewController {
     var collectionView: UICollectionView
     var arrayOfStudents: [Student] = []
 
-    //инициализация CollectionView
+    //инициализация VC из storyboard и инициализация CollectionView в нем
     required init?(coder: NSCoder) {
         let layout = UICollectionViewFlowLayout()
         self.collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)

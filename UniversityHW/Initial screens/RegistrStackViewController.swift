@@ -19,25 +19,21 @@ class RegistrStackViewController: StackViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "BackgroundColor")
-        
-        mainStackView = UIStackView(arrangedSubviews: [label, subStackView, button])
-        view.addSubview(mainStackView)
-        //установка MainStackView и установка его элементов (label,subStack, button)
-        setMainStackView()
-    }
-    
-    
-    //MARK: - MainStackView
-        //функция устанавливает не только MainStackView, но сюда же добавлена установка его элементов (label,subStack, button)
-    override func setMainStackView() {
-        super.setMainStackView()
+
+        mainStackView.insertArrangedSubview(label, at: 0)
+        mainStackView.addArrangedSubview(button)
+        //установка расположения MainStackView на view и установка его элементов (label,subStack, button)
+        setMainStackViewLayout()
+
         setLabel(label: label, text: "Registration")
-        
+
         let arrayOfTextFields = [usernameTextField, passwordTextField, repeatPasswordTextField]
         setSubStackView(array: arrayOfTextFields, arrayOfPlaceholders: ["Username", "Password", "Repeat password"])
-        
+        subStackViewLayout()
+
         setButton(button: button, title: "Register")
     }
+    
     
     //MARK: - Button
     override func setButton(button: UIButton, title: String) {

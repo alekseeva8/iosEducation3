@@ -19,23 +19,19 @@ class LoginStackViewController: StackViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "BackgroundColor")
 
-        mainStackView = UIStackView(arrangedSubviews: [label, subStackView, button])
-        view.addSubview(mainStackView)
-        //установка MainStackView и установка его элементов (label,subStack, button)
-        setMainStackView()
-    }
+        mainStackView.insertArrangedSubview(label, at: 0)
+        mainStackView.addArrangedSubview(button)
+        setMainStackViewLayout()
 
-    //MARK: - MainStackView
-    //функция устанавливает не только MainStackView, но сюда же добавлена установка его элементов (label,subStack, button)
-    override func setMainStackView() {
-        super.setMainStackView()
         setLabel(label: label, text: "Login to your account")
 
         let arrayOfTextFields = [usernameTextField, passwordTextField]
         setSubStackView(array: arrayOfTextFields, arrayOfPlaceholders: ["Username", "Password"])
-
+        subStackViewLayout()
+        
         setButton(button: button, title: "LOG IN")
     }
+
 
     //MARK: - Button
     override func setButton(button: UIButton, title: String) {

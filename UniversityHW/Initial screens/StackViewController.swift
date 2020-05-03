@@ -10,15 +10,21 @@ import UIKit
 
 class StackViewController: UIViewController {
 
-    var mainStackView = UIStackView(arrangedSubviews: [])
+    var mainStackView: UIStackView
     var subStackView = UIStackView(arrangedSubviews: [])
+
+    required init?(coder: NSCoder) {
+        self.mainStackView = UIStackView(arrangedSubviews: [subStackView])
+        super.init(coder: coder)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(mainStackView)
     }
 
     //MARK: - MainStackView
-    func setMainStackView() {
+    func setMainStackViewLayout() {
 
         mainStackView.axis = .vertical
         mainStackView.alignment = .center
@@ -63,6 +69,8 @@ class StackViewController: UIViewController {
             item.heightAnchor.constraint(equalToConstant: 34).isActive = true
             subStackView.addArrangedSubview(item)
         }
+    }
+    func subStackViewLayout() {
         subStackView.widthAnchor.constraint(equalToConstant: 335).isActive = true
         subStackView.axis = .vertical
         subStackView.alignment = .fill
